@@ -32,12 +32,6 @@ private slots:
 private:
     Ui::admin_login *ui;
     admin_main *log;
-    QLineEdit *input_login;
-};
-class User{
-public:
-    std::string password;
-    bool isRoot;
-    User(std::string password,bool isRoot);
+    warning *d;
 };
 #endif // ADMIN_LOGIN_H

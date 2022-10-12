@@ -23,13 +23,12 @@ void user_login::paintEvent(QPaintEvent *event)
     QPixmap pixmap;
 
     pixmap.load(picture[pos]);
-     pixmap.scaled(638,483);
-    painter->drawPixmap(0,0,638,483,pixmap);
+     pixmap.scaled(840,578);
+    painter->drawPixmap(0,0,840,578,pixmap);
 }
 
 void user_login::on_pushButton_more_clicked()
 {
-
     more=new user_selfchoose(this);
     more->show();
     this->hide();

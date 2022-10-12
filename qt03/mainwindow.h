@@ -9,6 +9,11 @@
 #include "QWidget"
 #include "QPainter"
 #include "QPixmap"
+#include "QRegularExpressionValidator"
+#include "QRegularExpression"
+#include "QValidator"
+#include "QEvent"
+#include "QDebug"
 
 
 
@@ -39,6 +44,7 @@ private:
     user_login *a;
     admin_login *b;
     warning *c;
+    QLineEdit *input_phone;
 };
 
 #endif // MAINWINDOW_H

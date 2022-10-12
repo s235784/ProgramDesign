@@ -1,9 +1,7 @@
 #ifndef USER_INFO_H
 #define USER_INFO_H
-
 #include <QMainWindow>
-#include "user_login.h"
-
+#include "confirm.h"
 namespace Ui {
 class user_info;
 }
@@ -20,10 +18,11 @@ private slots:
 
     void on_pushButton_confirm_clicked();
 
+    void on_pushButton_change_clicked();
+
 private:
     Ui::user_info *ui;
-
-    user_login *back;
+    confirm *con;
 };
 
 #endif // USER_INFO_H

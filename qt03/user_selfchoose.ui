@@ -205,14 +205,14 @@
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>180</y>
+      <y>167</y>
       <width>80</width>
-      <height>18</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>7</pointsize>
+      <pointsize>9</pointsize>
      </font>
     </property>
     <property name="text">
@@ -223,14 +223,14 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>180</y>
+      <y>167</y>
       <width>80</width>
-      <height>18</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>7</pointsize>
+      <pointsize>9</pointsize>
      </font>
     </property>
     <property name="text">

@@ -47,11 +47,19 @@ void admin_login::on_pushButton_back_clicked()
 
 void admin_login::on_pushButton_login_clicked()
 {
+//判断密码输入是否正确
 
-
+       if(ui->input_login->text()=="123456")
+       {
             log=new admin_main(this);
             log->show();
             this->hide();
+       }
+       else
+       {
+           QMessageBox::warning(this,tr("登陆失败"),tr("请重新输入"),QMessageBox::Ok);
+           ui->input_login->clear();
+       }
 
 
 }

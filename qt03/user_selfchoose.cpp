@@ -1,6 +1,5 @@
 #include "user_selfchoose.h"
 #include "ui_user_selfchoose.h"
-#include "user_login.h"
 user_selfchoose::user_selfchoose(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::user_selfchoose)
@@ -32,5 +31,13 @@ void user_selfchoose::on_pushButton_back_clicked()
 
     this->parentWidget()->show();
     delete this;
+}
+
+
+void user_selfchoose::on_pushButton_confirm_clicked()
+{
+    con=new user_info(this);
+    con->show();
+    this->hide();
 }
 

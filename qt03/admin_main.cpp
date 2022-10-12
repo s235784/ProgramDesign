@@ -39,6 +39,5 @@ void admin_main::on_pushButton_manage_clicked()
     man=new admin_mange(this);
     man->show();
     this->hide();
-
 }
 

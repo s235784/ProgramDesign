@@ -13,12 +13,13 @@ user_info::~user_info()
     delete ui;
 }
 
-
-
-
 void user_info::on_pushButton_confirm_clicked()
 {
-    back=new user_login;
-    back->show();
+
+}
+void user_info::on_pushButton_change_clicked()
+{
+    this->parentWidget()->show();
+    delete this;
 }
 

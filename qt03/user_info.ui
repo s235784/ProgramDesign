@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>336</width>
-    <height>235</height>
+    <width>523</width>
+    <height>301</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>40</x>
       <y>0</y>
-      <width>201</width>
+      <width>451</width>
       <height>31</height>
      </rect>
     </property>
@@ -29,14 +29,14 @@
      </font>
     </property>
     <property name="text">
-     <string>这是您选择的套餐</string>
+     <string>这是我们根据您的需求为您匹配的最佳的结果</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_confirm">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>170</y>
+      <x>290</x>
+      <y>200</y>
       <width>80</width>
       <height>18</height>
      </rect>
@@ -48,8 +48,8 @@
    <widget class="QPushButton" name="pushButton_change">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>170</y>
+      <x>120</x>
+      <y>200</y>
       <width>80</width>
       <height>18</height>
      </rect>
@@ -61,9 +61,9 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>160</x>
       <y>40</y>
-      <width>61</width>
+      <width>81</width>
       <height>31</height>
      </rect>
     </property>
@@ -79,9 +79,9 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>160</x>
       <y>80</y>
-      <width>61</width>
+      <width>91</width>
       <height>31</height>
      </rect>
     </property>
@@ -97,9 +97,9 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>160</x>
       <y>120</y>
-      <width>61</width>
+      <width>91</width>
       <height>31</height>
      </rect>
     </property>
@@ -115,7 +115,7 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>260</x>
       <y>50</y>
       <width>81</width>
       <height>16</height>
@@ -128,7 +128,7 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>260</x>
       <y>90</y>
       <width>81</width>
       <height>16</height>
@@ -141,7 +141,7 @@
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>260</x>
       <y>130</y>
       <width>81</width>
       <height>16</height>
@@ -157,7 +157,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>336</width>
+     <width>523</width>
      <height>17</height>
     </rect>
    </property>

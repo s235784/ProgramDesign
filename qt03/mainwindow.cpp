@@ -8,6 +8,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->input_phone->setPlaceholderText("请输入您的电话号码");
+    //限制只能输入数字
+    QRegularExpressionValidator *pRevalidotor=new QRegularExpressionValidator(QRegularExpression("[0-9]+$"),this);
+    ui->input_phone->setValidator(pRevalidotor);
+    //限制只能输入11位
+    ui->input_phone->setMaxLength(11);
 }
 
 MainWindow::~MainWindow()

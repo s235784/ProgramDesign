@@ -4,6 +4,7 @@
 #include "QWidget"
 #include "QPainter"
 #include "QPixmap"
+#include "user_info.h"
 namespace Ui {
 class user_selfchoose;
 }
@@ -21,9 +22,11 @@ public:
 private slots:
     void on_pushButton_back_clicked();
 
+    void on_pushButton_confirm_clicked();
+
 private:
     Ui::user_selfchoose *ui;
-
+    user_info *con;
 };
 
 #endif // USER_SELFCHOOSE_H
