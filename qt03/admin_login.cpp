@@ -54,6 +54,7 @@ void admin_login::on_pushButton_login_clicked()
             log=new admin_main(this);
             log->show();
             this->hide();
+            ui->input_login->clear();
        }
        else
        {

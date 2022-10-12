@@ -26,3 +26,11 @@ void user_info::on_pushButton_change_clicked()
     delete this;
 }
 
+
+void user_info::on_pushButton_back_clicked()
+{
+    // 返回上一个窗口
+    this->parentWidget()->show();
+    delete this;
+}
+

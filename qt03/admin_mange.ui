@@ -83,7 +83,7 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>资费 元</string>
+     <string>资费/元</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -104,7 +104,7 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>通话 分</string>
+     <string>通话/分</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -125,7 +125,7 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>流量 MB</string>
+     <string>流量/MB</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_add">
@@ -185,7 +185,7 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>带宽 Mb</string>
+     <string>带宽/Mb</string>
     </property>
    </widget>
   </widget>

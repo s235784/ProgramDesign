@@ -15,8 +15,11 @@ SOURCES += \
     confirm.cpp \
     main.cpp \
     mainwindow.cpp \
+    plan_add.cpp \
     user_info.cpp \
     user_login.cpp \
+    user_main.cpp \
+    user_plan.cpp \
     user_selfchoose.cpp \
     warning.cpp
 
@@ -26,8 +29,11 @@ HEADERS += \
     admin_mange.h \
     confirm.h \
     mainwindow.h \
+    plan_add.h \
     user_info.h \
     user_login.h \
+    user_main.h \
+    user_plan.h \
     user_selfchoose.h \
     warning.h
 
@@ -37,8 +43,11 @@ FORMS += \
     admin_mange.ui \
     confirm.ui \
     mainwindow.ui \
+    plan_add.ui \
     user_info.ui \
     user_login.ui \
+    user_main.ui \
+    user_plan.ui \
     user_selfchoose.ui \
     warning.ui
 

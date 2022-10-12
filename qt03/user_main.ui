@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>user_info</class>
- <widget class="QMainWindow" name="user_info">
+ <class>user_main</class>
+ <widget class="QMainWindow" name="user_main">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>569</width>
-    <height>322</height>
+    <width>598</width>
+    <height>330</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>用户选择的套餐</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>170</x>
       <y>0</y>
-      <width>561</width>
-      <height>31</height>
+      <width>301</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
@@ -29,20 +29,46 @@
      </font>
     </property>
     <property name="text">
-     <string>这是我们根据您的需求为您匹配的最佳的结果</string>
+     <string>尊敬的电信用户您好</string>
     </property>
    </widget>
-   <widget class="QListView" name="listView">
+   <widget class="QPushButton" name="pushButton_userplan">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>31</y>
-      <width>541</width>
-      <height>201</height>
+      <x>180</x>
+      <y>90</y>
+      <width>221</width>
+      <height>51</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>套餐选择</string>
+    </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_back">
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>190</y>
+      <width>221</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>我的套餐</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -61,7 +87,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>569</width>
+     <width>598</width>
      <height>17</height>
     </rect>
    </property>

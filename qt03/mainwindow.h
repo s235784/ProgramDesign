@@ -14,7 +14,7 @@
 #include "QValidator"
 #include "QEvent"
 #include "QDebug"
-
+#include "user_main.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -41,7 +41,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    user_login *a;
+    user_main *a;
     admin_login *b;
     warning *c;
     QLineEdit *input_phone;

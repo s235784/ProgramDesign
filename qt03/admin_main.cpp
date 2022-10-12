@@ -43,3 +43,16 @@ void admin_main::on_pushButton_manage_clicked()
     this->hide();
 }
 
+
+void admin_main::on_pushButton_check_clicked()
+{
+
+
+}
+
+
+void admin_main::on_pushButton_intend_clicked()
+{
+
+}
+

@@ -20,6 +20,8 @@ private slots:
 
     void on_pushButton_change_clicked();
 
+    void on_pushButton_back_clicked();
+
 private:
     Ui::user_info *ui;
     confirm *con;

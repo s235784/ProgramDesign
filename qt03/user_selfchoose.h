@@ -5,6 +5,8 @@
 #include "QPainter"
 #include "QPixmap"
 #include "user_info.h"
+#include "QRegularExpressionValidator"
+#include "QRegularExpression"
 namespace Ui {
 class user_selfchoose;
 }

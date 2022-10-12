@@ -31,6 +31,5 @@ private slots:
 private:
     Ui::admin_login *ui;
     admin_main *log;
-    warning *d;
 };
 #endif // ADMIN_LOGIN_H

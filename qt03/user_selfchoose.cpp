@@ -5,6 +5,13 @@ user_selfchoose::user_selfchoose(QWidget *parent) :
     ui(new Ui::user_selfchoose)
 {
     ui->setupUi(this);
+    QRegularExpressionValidator *pRevalidotor2=new QRegularExpressionValidator(QRegularExpression("[0-9]+$"),this);
+    ui->lineEdit_flow->setValidator(pRevalidotor2);
+    QRegularExpressionValidator *pRevalidotor3=new QRegularExpressionValidator(QRegularExpression("[0-9]+$"),this);
+    ui->lineEdit_time->setValidator(pRevalidotor3);
+    QRegularExpressionValidator *pRevalidotor4=new QRegularExpressionValidator(QRegularExpression("[0-9]+$"),this);
+    ui->lineEdit_band->setValidator(pRevalidotor4);
+
 }
 
 user_selfchoose::~user_selfchoose()
@@ -21,8 +28,8 @@ void user_selfchoose::paintEvent(QPaintEvent *event)
     QPixmap pixmap;
 
     pixmap.load(picture[pos]);
-     pixmap.scaled(395,237);
-    painter->drawPixmap(0,0,395,237,pixmap);
+     pixmap.scaled(518,306);
+    painter->drawPixmap(0,0,518,306,pixmap);
 }
 
 

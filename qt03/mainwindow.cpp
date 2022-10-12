@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "QMessageBox"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -29,10 +30,16 @@ void MainWindow::on_pushButton_exit_clicked()
 //登陆键进入
 void MainWindow::on_pushButton_login_clicked()
 {
-    a=new user_login(this);
+
+    a=new user_main(this);
     a->show();
     this->hide();
-}
+    }
+    /*else
+    {
+        QMessageBox::warning(this,tr("错误"),tr("请输入正确的电话号码"),QMessageBox::Ok);
+    }
+}*/
 //管理员登陆
 void MainWindow::on_pushButton_admin_login_clicked()
 {

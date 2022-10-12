@@ -71,3 +71,11 @@ void admin_mange::on_pushButton_back_clicked()
     delete this;
 }
 
+
+void admin_mange::on_pushButton_add_clicked()
+{
+    add=new plan_add(this);
+    add->show();
+    this->hide();
+}
+
