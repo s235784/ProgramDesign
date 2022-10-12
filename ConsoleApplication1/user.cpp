@@ -5,12 +5,30 @@
 #include <iostream>
 using namespace std;
 
+void userMenu(string& phone);
 void recommendPlan();
 void showAllPlanUser();
-void showMyPlan();
-void changeMyPlan();
+void showMyPlan(string& phone);
+void changeMyPlan(string& phone);
 
-void userMenu() {
+void showPhoneInput() {
+	string phone;
+	do {
+		cout << "请输入您的手机号：";
+		cin >> phone;
+		if (matchPhone(phone)) {
+			break;
+		}
+		else {
+			cout << "格式有误，请重新输入。" << endl;
+		}
+	} while (true);
+
+	system("cls");
+	userMenu(phone);
+}
+
+void userMenu(string& phone) {
 	bool continueShow = false;
 	do {
 		int choice;
@@ -28,15 +46,18 @@ void userMenu() {
 			continueShow = true;
 			break;
 		case 2:
+			system("cls");
 			showAllPlanUser();
 			continueShow = true;
 			break;
 		case 3:
-			showMyPlan();
+			system("cls");
+			showMyPlan(phone);
 			continueShow = true;
 			break;
 		case 4:
-			changeMyPlan();
+			system("cls");
+			changeMyPlan(phone);
 			continueShow = true;
 			break;
 		case 0:
@@ -101,19 +122,7 @@ void showAllPlanUser() {
 	showPlanList(planList);
 }
 
-void showMyPlan() {
-	string phone;
-	do {
-		cout << "请输入您的手机号：";
-		cin >> phone;
-		if (matchPhone(phone)) {
-			break;
-		}
-		else {
-			cout << "格式有误，请重新输入。" << endl;
-		}
-	} while (true);
-	
+void showMyPlan(string& phone) {
 	if (!isExistUserPlan(phone)) {
 		cout << "您还没有选择任何套餐。" << endl;
 	}
@@ -124,19 +133,8 @@ void showMyPlan() {
 	}
 }
 
-void changeMyPlan() {
-	string phone;
-	do {
-		cout << "请输入您的手机号：";
-		cin >> phone;
-		if (matchPhone(phone)) {
-			break;
-		}
-		else {
-			cout << "格式有误，请重新输入。" << endl;
-		}
-	} while (true);
-
+void changeMyPlan(string& phone) {
+	cout << "可选套餐：" << endl;
 	showAllPlanUser();
 	cout << "请输入您要变更的套餐前的序号：";
 	int id;

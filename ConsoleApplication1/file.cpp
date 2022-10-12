@@ -126,10 +126,10 @@ void deletePlan(int id) {
 list<Plan> readPlanList() {
 	list<Plan> planList;
 	string fileDisk = readFile(file_plan);
-	if (fileDisk[fileDisk.length() - 1] == '\n') {
-		fileDisk.pop_back();
-	}
 	if (!fileDisk.empty()) {
+		if (fileDisk[fileDisk.length() - 1] == '\n') {
+			fileDisk.pop_back();
+		}
 		list<string> planTextList = splitString(fileDisk, "\n");
 		for (const auto& planText : planTextList) {
 			list<string> planStructText = splitString(planText, " ");
@@ -268,7 +268,7 @@ void addWantedPlan(WantedPlan plan) {
 		plan.id = 1;
 		plan.times = 1;
 		string content = getWantedPlanString(plan);
-		writeFileTrunc(file_plan, content);
+		writeFileTrunc(file_wanted_plan, content);
 	}
 }
 

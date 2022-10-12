@@ -9,15 +9,25 @@
 #include <windows.h>
 using namespace std;
 
-void checkAdminPasswd();
 void showPlanMenu();
 void showPlanManageMenu();
 void showAllUserPlan();
 void showUserWantedPlan();
 string getpassword();
 
-void adminMenu() {
-	checkAdminPasswd();
+void checkAdminPasswd() {
+	cout << "请输入管理员密码：";
+	do {
+		string passwdInput = getpassword();
+		string passwd = getAdminPassword();
+		if (passwd != passwdInput) {
+			cout << "密码错误，请重新输入：";
+		}
+		else {
+			break;
+		}
+	} while (true);
+
 	system("cls");
 	showPlanMenu();
 }
@@ -39,10 +49,12 @@ void showPlanMenu() {
 			continueShow = true;
 			break;
 		case 2:
+			system("cls");
 			showAllUserPlan();
 			continueShow = true;
 			break;
 		case 3:
+			system("cls");
 			showUserWantedPlan();
 			continueShow = true;
 			break;
@@ -54,20 +66,6 @@ void showPlanMenu() {
 			continueShow = true;
 		}
 	} while (continueShow);
-}
-
-void checkAdminPasswd() {
-	cout << "请输入管理员密码：";
-	do {
-		string passwdInput = getpassword();
-		string passwd = getAdminPassword();
-		if (passwd != passwdInput) {
-			cout << "密码错误，请重新输入：";
-		}
-		else {
-			return;
-		}
-	} while (true);
 }
 
 // 已知问题：输入方向键时也会触发

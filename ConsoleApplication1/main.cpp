@@ -25,13 +25,13 @@ int main() {
 		switch (choice) {
 		case 1:
 			system("cls");
-			userMenu();
+			showPhoneInput();
 			backMenu = true;
 			continueShow = false;
 			break;
 		case 2:
 			system("cls");
-			adminMenu();
+			checkAdminPasswd();
 			backMenu = true;
 			continueShow = false;
 			break;

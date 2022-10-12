@@ -45,6 +45,7 @@ string getWantedPlanString(WantedPlan plan) {
 string getUserPlanString(UserPlan userPlan) {
 	string content = "";
 	content.append(userPlan.phone);
+	content.append(" ");
 	content.append(to_string(userPlan.planId));
 	content.append("\n");
 	return content;
@@ -123,8 +124,8 @@ void showPlanList(list<Plan>& planList) {
 void showUserPlanList(list<UserPlanVO>& planList) {
 	cout << "------------------------------------" << endl;
 	cout << setiosflags(ios::left)
-		<< setw(20) << "手机号"
-		<< setw(12) << "编号"
+		<< setw(16) << "手机号"
+		<< setw(12) << "套餐编号"
 		<< setw(12) << "资费（元）"
 		<< setw(19) << "通话时长（分钟）"
 		<< setw(12) << "流量（MB）"
@@ -133,7 +134,7 @@ void showUserPlanList(list<UserPlanVO>& planList) {
 	cout << "------------------------------------" << endl;
 	for (const auto& plan : planList) {
 		cout << setprecision(2) << fixed;
-		cout << setw(20) << plan.phone
+		cout << setw(16) << plan.phone
 			<< setw(12) << plan.id
 			<< setw(12) << plan.fee
 			<< setw(19) << plan.duration
@@ -192,6 +193,6 @@ list<int> getRandIntList(int maxNum, int count) {
 }
 
 bool matchPhone(string phone) {
-	regex reg("/^1[3456789]\d{9}$/");
+	regex reg("^[1][3,4,5,7,8][0-9]{9}$");
 	return regex_match(phone.data(), reg);
 }
