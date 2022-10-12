@@ -13,12 +13,12 @@ void showPlanMenu();
 void showPlanManageMenu();
 void showAllUserPlan();
 void showUserWantedPlan();
-string getpassword();
+string getPassword();
 
 void checkAdminPasswd() {
 	cout << "请输入管理员密码：";
 	do {
-		string passwdInput = getpassword();
+		string passwdInput = getPassword();
 		string passwd = getAdminPassword();
 		if (passwd != passwdInput) {
 			cout << "密码错误，请重新输入：";
@@ -69,7 +69,7 @@ void showPlanMenu() {
 }
 
 // 已知问题：输入方向键时也会触发
-string getpassword() {
+string getPassword() {
 	string str = "";
 	char init = '\0';
 	for (;;) {

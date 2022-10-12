@@ -11,7 +11,11 @@ CONFIG += c++17
 SOURCES += \
     admin_login.cpp \
     admin_main.cpp \
-    admin_mange.cpp \
+    admin_plan.cpp \
+    admin_user_plan.cpp \
+    admin_wanted.cpp \
+    cmd/file.cpp \
+    cmd/util.cpp \
     confirm.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -26,7 +30,14 @@ SOURCES += \
 HEADERS += \
     admin_login.h \
     admin_main.h \
-    admin_mange.h \
+    admin_plan.h \
+    admin_user_plan.h \
+    admin_wanted.h \
+    cmd/file.h \
+    cmd/planStruct.h \
+    cmd/userPlanStruct.h \
+    cmd/util.h \
+    cmd/wantedPlanStruct.h \
     confirm.h \
     mainwindow.h \
     plan_add.h \
@@ -40,7 +51,9 @@ HEADERS += \
 FORMS += \
     admin_login.ui \
     admin_main.ui \
-    admin_mange.ui \
+    admin_plan.ui \
+    admin_user_plan.ui \
+    admin_wanted.ui \
     confirm.ui \
     mainwindow.ui \
     plan_add.ui \

@@ -4,7 +4,8 @@
 #include "QWidget"
 #include "QPainter"
 #include "QPixmap"
-#include "admin_mange.h"
+#include "admin_plan.h"
+
 namespace Ui {
 class admin_main;
 }
@@ -22,18 +23,13 @@ public:
 
 private slots:
     void on_pushButton_back_clicked();
-
-    void on_pushButton_manage_clicked();
-
-    void on_pushButton_check_clicked();
-
-    void on_pushButton_intend_clicked();
+    void on_pushButton_plan_clicked();
+    void on_pushButton_user_plan_clicked();
+    void on_pushButton_wanted_clicked();
 
 private:
     Ui::admin_main *ui;
-    admin_mange *man;
-
-
+    admin_plan *planUI;
 
 };
 

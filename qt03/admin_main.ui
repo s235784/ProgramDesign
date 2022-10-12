@@ -34,6 +34,9 @@
     <property name="text">
      <string>您可以进行如下操作</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
@@ -51,7 +54,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_manage">
+   <widget class="QPushButton" name="pushButton_plan">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -77,7 +80,7 @@
      <string>返回</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_check">
+   <widget class="QPushButton" name="pushButton_user_plan">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -90,7 +93,7 @@
      <string>所有用户套餐</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_intend">
+   <widget class="QPushButton" name="pushButton_wanted">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -115,7 +118,7 @@
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
-     <string>  </string>
+     <string/>
     </property>
    </widget>
    <addaction name="menu"/>

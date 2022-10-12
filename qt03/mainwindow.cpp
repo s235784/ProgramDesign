@@ -1,6 +1,8 @@
+#include "cmd/util.h"
+#include "cmd/file.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "QMessageBox"
+#include <QMessageBox>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -14,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->input_phone->setValidator(pRevalidotor);
     //限制只能输入11位
     ui->input_phone->setMaxLength(11);
+    // 初始化配置文件
+    initProperties();
 }
 
 MainWindow::~MainWindow()
@@ -30,23 +34,28 @@ void MainWindow::on_pushButton_exit_clicked()
 //登陆键进入
 void MainWindow::on_pushButton_login_clicked()
 {
+    QString phone = ui -> input_phone -> text();
+    // 匹配手机号格式
+    if (matchPhone(phone.toStdString())) {
+        a = new user_main(this);
+        a->show();
+        this->hide();
+    } else {
+        // 手机号格式不正确显示弹窗
+        QMessageBox::warning(this, "格式错误",
+                             "您输入的手机号格式有误，请检查后重试。",
+                             QMessageBox::Ok);
+    }
+}
 
-    a=new user_main(this);
-    a->show();
-    this->hide();
-    }
-    /*else
-    {
-        QMessageBox::warning(this,tr("错误"),tr("请输入正确的电话号码"),QMessageBox::Ok);
-    }
-}*/
 //管理员登陆
 void MainWindow::on_pushButton_admin_login_clicked()
 {
-    b=new admin_login(this);
+    b = new admin_login(this);
     b->show();
     this->hide();
 }
+
 //背景图片
 void MainWindow::paintEvent(QPaintEvent *event)
 {

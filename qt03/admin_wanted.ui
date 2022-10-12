@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>admin_mange</class>
- <widget class="QMainWindow" name="admin_mange">
+ <class>admin_wanted</class>
+ <widget class="QMainWindow" name="admin_wanted">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>管理优惠套餐</string>
+   <string>用户意向套餐</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="logo">
@@ -33,8 +33,8 @@
    <widget class="QPushButton" name="pushButton_back">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>10</y>
+      <x>420</x>
+      <y>20</y>
       <width>70</width>
       <height>30</height>
      </rect>
@@ -83,7 +83,7 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>资费/元</string>
+     <string>通话/分</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -104,7 +104,7 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>通话/分</string>
+     <string>流量/MB</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -125,20 +125,7 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>流量/MB</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_add">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>10</y>
-      <width>70</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>增加</string>
+     <string>带宽/Mb</string>
     </property>
    </widget>
    <widget class="QListWidget" name="listWidget">
@@ -185,7 +172,7 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>带宽/Mb</string>
+     <string>次数</string>
     </property>
    </widget>
   </widget>

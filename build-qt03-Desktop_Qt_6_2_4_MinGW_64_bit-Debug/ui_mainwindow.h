@@ -82,7 +82,8 @@ public:
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(0, 0, 161, 81));
-        label_5->setStyleSheet(QString::fromUtf8("border-image: url(:/logo.jpg);"));
+        label_5->setStyleSheet(QString::fromUtf8("border-image: url(:/logo.jpg);\n"
+""));
         input_phone = new QLineEdit(centralwidget);
         input_phone->setObjectName(QString::fromUtf8("input_phone"));
         input_phone->setGeometry(QRect(192, 149, 151, 31));

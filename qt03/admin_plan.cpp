@@ -1,20 +1,20 @@
-#include "admin_mange.h"
+#include "admin_plan.h"
 #include "qboxlayout.h"
 #include "qcheckbox.h"
-#include "ui_admin_mange.h"
+#include "ui_admin_plan.h"
 
-admin_mange::admin_mange(QWidget *parent) :
+admin_plan::admin_plan(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::admin_mange)
+    ui(new Ui::admin_plan)
 {
     ui->setupUi(this);
 }
 
-admin_mange::~admin_mange()
+admin_plan::~admin_plan()
 {
     delete ui;
 }
-void admin_mange::paintEvent(QPaintEvent *event)
+void admin_plan::paintEvent(QPaintEvent *event)
 {
     static int pos=0;
     QString picture[1]={":/background.jpg"};
@@ -29,7 +29,7 @@ void admin_mange::paintEvent(QPaintEvent *event)
     painter->drawPixmap(0,0,356,240,pixmap);
 }
 
-void admin_mange::showEvent(QShowEvent* event) {
+void admin_plan::showEvent(QShowEvent* event) {
     // 列表
     QListWidgetItem *item=new QListWidgetItem;
     item->setSizeHint(QSize(10,50));
@@ -64,18 +64,10 @@ void admin_mange::showEvent(QShowEvent* event) {
 }
 
 
-void admin_mange::on_pushButton_back_clicked()
+void admin_plan::on_pushButton_back_clicked()
 {
     //返回上一个界面
     this->parentWidget()->show();
     delete this;
-}
-
-
-void admin_mange::on_pushButton_add_clicked()
-{
-    add=new plan_add(this);
-    add->show();
-    this->hide();
 }
 
