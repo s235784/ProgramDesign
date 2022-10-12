@@ -1,6 +1,5 @@
 #ifndef ADMIN_LOGIN_H
 #define ADMIN_LOGIN_H
-#include "warning.h"
 #include <QMainWindow>
 #include <QLineEdit>
 #include "admin_main.h"

@@ -1,4 +1,6 @@
 #include "admin_mange.h"
+#include "qboxlayout.h"
+#include "qcheckbox.h"
 #include "ui_admin_mange.h"
 
 admin_mange::admin_mange(QWidget *parent) :
@@ -23,8 +25,42 @@ void admin_mange::paintEvent(QPaintEvent *event)
     QPixmap pixmap;
 
     pixmap.load(picture[pos]);
-     pixmap.scaled(356,240);
+    pixmap.scaled(356,240);
     painter->drawPixmap(0,0,356,240,pixmap);
+}
+
+void admin_mange::showEvent(QShowEvent* event) {
+    // 列表
+    QListWidgetItem *item=new QListWidgetItem;
+    item->setSizeHint(QSize(10,50));
+    ui->listWidget->addItem(item);
+
+    QWidget *w = new QWidget;
+    QHBoxLayout *layout=new QHBoxLayout;
+    QLabel *idAdmin = new QLabel(w);
+    idAdmin->setText("1");
+    layout->addWidget(idAdmin);
+    QLabel *feeAdmin = new QLabel(w);
+    feeAdmin->setText("1");
+    layout->addWidget(feeAdmin);
+    QLabel *durationAdmin = new QLabel(w);
+    durationAdmin->setText("1");
+    layout->addWidget(durationAdmin);
+    QLabel *trafficAdmin = new QLabel(w);
+    trafficAdmin->setText("1");
+    layout->addWidget(trafficAdmin);
+    QLabel *broadbandAdmin = new QLabel(w);
+    broadbandAdmin->setText("1");
+    layout->addWidget(broadbandAdmin);
+    QPushButton *editButtonAdmin = new QPushButton(w);
+    editButtonAdmin->setText("修改");
+    layout->addWidget(editButtonAdmin);
+    QPushButton *deleteButtonAdmin = new QPushButton(w);
+    deleteButtonAdmin->setText("删除");
+    layout->addWidget(deleteButtonAdmin);
+
+    w->setLayout(layout);
+    ui->listWidget->setItemWidget(item,w);
 }
 
 

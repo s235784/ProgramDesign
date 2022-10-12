@@ -19,6 +19,9 @@ public:
     ~admin_mange();
     void paintEvent(QPaintEvent *event);
 
+protected:
+    void showEvent(QShowEvent* event);
+
 private slots:
 
 
