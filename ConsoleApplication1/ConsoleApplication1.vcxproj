@@ -130,15 +130,20 @@
     <ClCompile Include="admin.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="file.cpp" />
+    <ClCompile Include="planManage.cpp" />
     <ClCompile Include="user.cpp" />
     <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="admin.h" />
     <ClInclude Include="file.h" />
+    <ClInclude Include="planManage.h" />
     <ClInclude Include="planStruct.h" />
     <ClInclude Include="user.h" />
+    <ClInclude Include="userPlanStruct.h" />
+    <ClInclude Include="userPlanVOStruct.h" />
     <ClInclude Include="util.h" />
+    <ClInclude Include="wantedPlanStruct.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -30,6 +30,9 @@
     <ClCompile Include="util.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="planManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="planStruct.h">
@@ -45,6 +48,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="planManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="userPlanStruct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wantedPlanStruct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="userPlanVOStruct.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

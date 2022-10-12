@@ -1,4 +1,7 @@
 #include "file.h"
+#include "util.h"
+#include "userPlanVOStruct.h"
+#include "wantedPlanStruct.h"
 #include <iostream>
 #include <conio.h>
 #include <string>
@@ -20,14 +23,13 @@ void adminMenu() {
 }
 
 void showPlanMenu() {
-	cout << "1. 套餐管理" << endl;
-	cout << "2. 所有用户套餐" << endl;
-	cout << "3. 用户意向套餐" << endl;
-	cout << "0. 退出登录" << endl;
-
 	bool continueShow = false;
 	do {
 		int choice;
+		cout << "1. 套餐管理" << endl;
+		cout << "2. 所有用户套餐" << endl;
+		cout << "3. 用户意向套餐" << endl;
+		cout << "0. 退出登录" << endl;
 		cout << "请输入操作前的序号：";
 		cin >> choice;
 		switch (choice) {
@@ -38,11 +40,11 @@ void showPlanMenu() {
 			break;
 		case 2:
 			showAllUserPlan();
-			continueShow = false;
+			continueShow = true;
 			break;
 		case 3:
 			showUserWantedPlan();
-			continueShow = false;
+			continueShow = true;
 			break;
 		case 0:
 			continueShow = false;
@@ -90,14 +92,19 @@ string getpassword() {
 	return str;
 }
 
-void showPlanManageMenu() {
-
-}
-
 void showAllUserPlan() {
-
+	list<UserPlan> userPlanList = readUserPlanList();
+	list<UserPlanVO> userPlanVOList;
+	for (const auto& userPlan : userPlanList) {
+		Plan plan = getPlanById(userPlan.planId);
+		UserPlanVO userPlanVO = {userPlan.phone, plan.id, plan.fee,
+			plan.duration, plan.traffic, plan.broadband};
+		userPlanVOList.push_back(userPlanVO);
+	}
+	showUserPlanList(userPlanVOList);
 }
 
 void showUserWantedPlan() {
-
+	list<WantedPlan> wantedPlanList = readWantedPlanList();
+	showWantedPlanList(wantedPlanList);
 }
