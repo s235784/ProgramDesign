@@ -5,7 +5,7 @@
 #include "QMessageBox"
 
 
-using namespace std;
+
 admin_login::admin_login(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::admin_login)
@@ -57,7 +57,8 @@ void admin_login::on_pushButton_login_clicked()
        }
        else
        {
-           QMessageBox::warning(this,tr("登陆失败"),tr("请重新输入"),QMessageBox::Ok);
+           //弹出消息框
+           QMessageBox::warning(this,tr("登陆失败"),tr("密码错误，请重新输入"),QMessageBox::Ok);
            ui->input_login->clear();
        }
 

@@ -25,6 +25,12 @@ private slots:
 
     void on_pushButton_back_clicked();
 
+    void on_pushButton_confirm_clicked();
+
+    void on_pushButton_confirm_2_clicked();
+
+    void on_pushButton_confirm_3_clicked();
+
 private:
     Ui::user_login *ui;
 

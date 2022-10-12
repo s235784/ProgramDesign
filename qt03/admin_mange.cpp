@@ -30,6 +30,7 @@ void admin_mange::paintEvent(QPaintEvent *event)
 
 void admin_mange::on_pushButton_back_clicked()
 {
+    //返回上一个界面
     this->parentWidget()->show();
     delete this;
 }

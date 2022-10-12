@@ -29,6 +29,7 @@ void admin_main::paintEvent(QPaintEvent *event)
 
 void admin_main::on_pushButton_back_clicked()
 {
+    //返回上一个界面
     this->parentWidget()->show();
     delete this;
 }
@@ -36,6 +37,7 @@ void admin_main::on_pushButton_back_clicked()
 
 void admin_main::on_pushButton_manage_clicked()
 {
+    //跳转到管理员主菜单
     man=new admin_mange(this);
     man->show();
     this->hide();

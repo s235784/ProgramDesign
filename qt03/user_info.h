@@ -23,6 +23,7 @@ private slots:
 private:
     Ui::user_info *ui;
     confirm *con;
+
 };
 
 #endif // USER_INFO_H

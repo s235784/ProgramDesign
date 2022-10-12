@@ -145,7 +145,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/logo.jpg);</string>
+     <string notr="true">border-image: url(:/logo.jpg);
+</string>
     </property>
     <property name="text">
      <string/>

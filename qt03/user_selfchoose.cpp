@@ -29,6 +29,7 @@ void user_selfchoose::paintEvent(QPaintEvent *event)
 void user_selfchoose::on_pushButton_back_clicked()
 {
 
+    //返回上一个界面
     this->parentWidget()->show();
     delete this;
 }
@@ -36,6 +37,7 @@ void user_selfchoose::on_pushButton_back_clicked()
 
 void user_selfchoose::on_pushButton_confirm_clicked()
 {
+   //跳转到匹配套餐界面
     con=new user_info(this);
     con->show();
     this->hide();

@@ -15,6 +15,7 @@ confirm::~confirm()
 
 void confirm::on_pushButton_clicked()
 {
+
     close();
 }
 
