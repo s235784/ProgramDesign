@@ -9,6 +9,7 @@
 #include <iomanip>
 #include <iostream>
 #include <algorithm>
+
 using namespace std;
 
 string getPlanString(Plan plan) {
@@ -117,7 +118,7 @@ list<int> getRandIntList(int maxNum, int count) {
 		}
 		random_shuffle(temp.begin(), temp.end());
 		for (int i = 0; i < count; i++) {
-			result.push_back(temp[i]);
+            result.push_back(temp[i]);
 		}
 	}
 	return result;
