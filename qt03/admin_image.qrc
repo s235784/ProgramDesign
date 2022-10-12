@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>adm_img.jpg</file>
+        <file>warning2.jpg</file>
+        <file>logo.jpg</file>
+        <file>background.jpg</file>
+        <file>logo2.jpg</file>
+        <file>logo3.jpg</file>
+        <file>logo4.jpg</file>
+        <file>back_user.jpg</file>
+        <file>logo5.jpg</file>
+        <file>admin_logo.jpg</file>
+        <file>arrow.jpg</file>
+    </qresource>
+</RCC>
