@@ -13,6 +13,7 @@ admin_login::admin_login(QWidget *parent) :
     ui->setupUi(this);
      ui->input_login->setPlaceholderText("请输入您的密码");
      //隐藏密码
+     ui->input_login->setEchoMode(QLineEdit::Password);
 
 }
 
@@ -47,20 +48,10 @@ void admin_login::on_pushButton_back_clicked()
 void admin_login::on_pushButton_login_clicked()
 {
 
-    string password = ui->input_login->text().toStdString();
-    vector<User>adminList;
-    adminList.push_back(User("root","root",true));
-    for (auto obj : adminList)
-    {
-        if(obj.password==password)
-        {
+
             log=new admin_main(this);
             log->show();
             this->hide();
 
-        };
-    }
-    QMessageBox::about(NULL, "错误", "账号或密码错误，请重试！");
 
 }
-User::User(string username0,string password0,bool isRoot0):password(password0),isRoot(isRoot0){};
