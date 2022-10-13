@@ -1,5 +1,7 @@
 #include "admin_main.h"
 #include "admin_plan.h"
+#include "admin_wanted.h"
+#include "admin_user_plan.h"
 #include "ui_admin_main.h"
 
 admin_main::admin_main(QWidget *parent) :
@@ -24,7 +26,7 @@ void admin_main::paintEvent(QPaintEvent *event)
     QPixmap pixmap;
 
     pixmap.load(picture[pos]);
-     pixmap.scaled(356,240);
+    pixmap.scaled(356,240);
     painter->drawPixmap(0,0,356,240,pixmap);
 }
 
@@ -46,11 +48,15 @@ void admin_main::on_pushButton_plan_clicked()
 
 void admin_main::on_pushButton_user_plan_clicked() {
     // 跳转到用户套餐界面
-    // todo
+    admin_user_plan *planUI = new admin_user_plan(this);
+    planUI->show();
+    this->hide();
 }
 
 void admin_main::on_pushButton_wanted_clicked(){
     // 跳转到用户意向界面
-    // todo
+    admin_wanted *wantedUI = new admin_wanted(this);
+    wantedUI->show();
+    this->hide();
 }
 

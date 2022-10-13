@@ -30,9 +30,9 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
-    QLineEdit *lineEdit_money;
-    QLineEdit *lineEdit_time;
-    QLineEdit *lineEdit_flow;
+    QLineEdit *lineEdit_fee;
+    QLineEdit *lineEdit_duration;
+    QLineEdit *lineEdit_traffic;
     QLineEdit *lineEdit_band;
     QPushButton *pushButton_confirm;
     QLabel *label_6;
@@ -52,10 +52,11 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(160, 0, 391, 51));
+        label->setGeometry(QRect(60, 10, 391, 51));
         QFont font;
         font.setPointSize(20);
         label->setFont(font);
+        label->setAlignment(Qt::AlignCenter);
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(110, 60, 91, 41));
@@ -74,21 +75,21 @@ public:
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(110, 210, 81, 41));
         label_5->setFont(font1);
-        lineEdit_money = new QLineEdit(centralwidget);
-        lineEdit_money->setObjectName(QString::fromUtf8("lineEdit_money"));
-        lineEdit_money->setGeometry(QRect(270, 70, 81, 21));
-        lineEdit_time = new QLineEdit(centralwidget);
-        lineEdit_time->setObjectName(QString::fromUtf8("lineEdit_time"));
-        lineEdit_time->setGeometry(QRect(270, 120, 81, 20));
-        lineEdit_flow = new QLineEdit(centralwidget);
-        lineEdit_flow->setObjectName(QString::fromUtf8("lineEdit_flow"));
-        lineEdit_flow->setGeometry(QRect(270, 170, 81, 20));
+        lineEdit_fee = new QLineEdit(centralwidget);
+        lineEdit_fee->setObjectName(QString::fromUtf8("lineEdit_fee"));
+        lineEdit_fee->setGeometry(QRect(270, 70, 81, 21));
+        lineEdit_duration = new QLineEdit(centralwidget);
+        lineEdit_duration->setObjectName(QString::fromUtf8("lineEdit_duration"));
+        lineEdit_duration->setGeometry(QRect(270, 120, 81, 20));
+        lineEdit_traffic = new QLineEdit(centralwidget);
+        lineEdit_traffic->setObjectName(QString::fromUtf8("lineEdit_traffic"));
+        lineEdit_traffic->setGeometry(QRect(270, 170, 81, 20));
         lineEdit_band = new QLineEdit(centralwidget);
         lineEdit_band->setObjectName(QString::fromUtf8("lineEdit_band"));
         lineEdit_band->setGeometry(QRect(270, 220, 81, 20));
         pushButton_confirm = new QPushButton(centralwidget);
         pushButton_confirm->setObjectName(QString::fromUtf8("pushButton_confirm"));
-        pushButton_confirm->setGeometry(QRect(200, 260, 80, 31));
+        pushButton_confirm->setGeometry(QRect(220, 260, 80, 31));
         label_6 = new QLabel(centralwidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(380, 60, 91, 41));
@@ -124,8 +125,8 @@ public:
 
     void retranslateUi(QMainWindow *plan_add)
     {
-        plan_add->setWindowTitle(QCoreApplication::translate("plan_add", "\345\242\236\345\212\240\345\245\227\351\244\220\345\206\205\345\256\271", nullptr));
-        label->setText(QCoreApplication::translate("plan_add", "\347\256\241\347\220\206\345\245\227\351\244\220\344\270\255\347\232\204\351\241\271\347\233\256", nullptr));
+        plan_add->setWindowTitle(QCoreApplication::translate("plan_add", "\347\256\241\347\220\206\345\245\227\351\244\220", nullptr));
+        label->setText(QCoreApplication::translate("plan_add", "\347\256\241\347\220\206\345\245\227\351\244\220", nullptr));
         label_2->setText(QCoreApplication::translate("plan_add", "\350\265\204\350\264\271", nullptr));
         label_3->setText(QCoreApplication::translate("plan_add", "\351\200\232\350\257\235\346\227\266\351\225\277", nullptr));
         label_4->setText(QCoreApplication::translate("plan_add", "\346\265\201\351\207\217", nullptr));

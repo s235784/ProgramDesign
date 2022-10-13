@@ -117,12 +117,12 @@ public:
         logo->setText(QString());
         pushButton_back->setText(QCoreApplication::translate("admin_plan", "\350\277\224\345\233\236", nullptr));
         label->setText(QCoreApplication::translate("admin_plan", "\347\274\226\345\217\267", nullptr));
-        label_3->setText(QCoreApplication::translate("admin_plan", "\350\265\204\350\264\271 \345\205\203", nullptr));
-        label_4->setText(QCoreApplication::translate("admin_plan", "\351\200\232\350\257\235 \345\210\206", nullptr));
-        label_5->setText(QCoreApplication::translate("admin_plan", "\346\265\201\351\207\217 MB", nullptr));
+        label_3->setText(QCoreApplication::translate("admin_plan", "\350\265\204\350\264\271/\345\205\203", nullptr));
+        label_4->setText(QCoreApplication::translate("admin_plan", "\351\200\232\350\257\235/\345\210\206", nullptr));
+        label_5->setText(QCoreApplication::translate("admin_plan", "\346\265\201\351\207\217/MB", nullptr));
         pushButton_add->setText(QCoreApplication::translate("admin_plan", "\345\242\236\345\212\240", nullptr));
         label_6->setText(QCoreApplication::translate("admin_plan", "\345\256\275\345\270\246", nullptr));
-        label_2->setText(QCoreApplication::translate("admin_plan", "\345\270\246\345\256\275 Mb", nullptr));
+        label_2->setText(QCoreApplication::translate("admin_plan", "\345\270\246\345\256\275/Mb", nullptr));
         menu->setTitle(QString());
     } // retranslateUi
 

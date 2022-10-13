@@ -1,4 +1,5 @@
 #include "cmd/file.h"
+#include "cmd/util.h"
 #include "cmd/userPlanStruct.h"
 #include "admin_user_plan.h"
 #include "qboxlayout.h"
@@ -53,6 +54,10 @@ void admin_user_plan::showEvent(QShowEvent* event) {
         QLabel *idTextUserPlan = new QLabel(w);
         idTextUserPlan->setText(QString::fromStdString(to_string(plan.id)));
         layout->addWidget(idTextUserPlan);
+
+        QLabel *feeTextUserPlan = new QLabel(w);
+        feeTextUserPlan->setText(QString::fromStdString(getTwoPlacesDecimal(plan.fee)));
+        layout->addWidget(feeTextUserPlan);
 
         QLabel *durationTextUserPlan = new QLabel(w);
         durationTextUserPlan->setText(QString::fromStdString(to_string(plan.duration)));

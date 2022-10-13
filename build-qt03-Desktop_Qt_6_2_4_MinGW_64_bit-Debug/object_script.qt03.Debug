@@ -9,8 +9,9 @@ debug/confirm.o
 debug/main.o
 debug/mainwindow.o
 debug/plan_add.o
+debug/user_all_plan.o
+debug/user_com.o
 debug/user_info.o
-debug/user_login.o
 debug/user_main.o
 debug/user_plan.o
 debug/user_selfchoose.o
@@ -24,8 +25,9 @@ debug/moc_admin_wanted.o
 debug/moc_confirm.o
 debug/moc_mainwindow.o
 debug/moc_plan_add.o
+debug/moc_user_all_plan.o
+debug/moc_user_com.o
 debug/moc_user_info.o
-debug/moc_user_login.o
 debug/moc_user_main.o
 debug/moc_user_plan.o
 debug/moc_user_selfchoose.o

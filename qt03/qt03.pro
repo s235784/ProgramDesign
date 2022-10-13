@@ -20,9 +20,9 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     plan_add.cpp \
+    user_all_plan.cpp \
     user_com.cpp \
     user_info.cpp \
-    user_login.cpp \
     user_main.cpp \
     user_plan.cpp \
     user_selfchoose.cpp
@@ -41,9 +41,9 @@ HEADERS += \
     cmd/wantedPlanStruct.h \
     mainwindow.h \
     plan_add.h \
+    user_all_plan.h \
     user_com.h \
     user_info.h \
-    user_login.h \
     user_main.h \
     user_plan.h \
     user_selfchoose.h
@@ -57,9 +57,9 @@ FORMS += \
     admin_wanted.ui \
     mainwindow.ui \
     plan_add.ui \
+    user_all_plan.ui \
     user_com.ui \
     user_info.ui \
-    user_login.ui \
     user_main.ui \
     user_plan.ui \
     user_selfchoose.ui

@@ -1,10 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include"user_login.h"
+#include"user_all_plan.h"
 #include"admin_login.h"
-#include <QMainWindow>
-#include <QLineEdit>
-#include <QLabel>
 #include "warning.h"
 #include "QWidget"
 #include "QPainter"
@@ -15,6 +12,10 @@
 #include "QEvent"
 #include "QDebug"
 #include "user_main.h"
+#include <QMainWindow>
+#include <QLineEdit>
+#include <QLabel>
+#include <string>
 
 
 QT_BEGIN_NAMESPACE
@@ -28,8 +29,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    //绘制图片
     void paintEvent(QPaintEvent *event);
+
+protected:
+    void showEvent(QShowEvent* event);
 
 private slots:
     void on_pushButton_exit_clicked();
@@ -41,10 +44,13 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    user_main *a;
-    admin_login *b;
-    warning *c;
+    user_main *userMain;
     QLineEdit *input_phone;
+
+signals:
+    void sendUserPhoneSignal(std::string& phone);
+    void sendPhoneToUserPlan(std::string& phone);
+
 };
 
 #endif // MAINWINDOW_H
