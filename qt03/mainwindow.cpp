@@ -10,6 +10,15 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    userMain = new user_main(this);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::showEvent(QShowEvent* event) {
     ui->input_phone->setPlaceholderText("请输入您的电话号码");
     //限制只能输入数字
     QRegularExpressionValidator *pRevalidotor=new QRegularExpressionValidator(QRegularExpression("[0-9]+$"),this);
@@ -18,11 +27,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->input_phone->setMaxLength(11);
     // 初始化配置文件
     initProperties();
-}
-
-MainWindow::~MainWindow()
-{
-    delete ui;
+    // 绑定事件
+    connect(this, SIGNAL(sendUserPhoneSignal(std::string&)),
+            userMain, SLOT(getUserPhoneSignal(std::string&)),
+            Qt::UniqueConnection);
 }
 
 //退出键关闭窗口
@@ -34,25 +42,25 @@ void MainWindow::on_pushButton_exit_clicked()
 //登陆键进入
 void MainWindow::on_pushButton_login_clicked()
 {
-    QString phone = ui -> input_phone -> text();
+    string phone = ui->input_phone->text().toStdString();
     // 匹配手机号格式
-    if (matchPhone(phone.toStdString())) {
-        a = new user_main(this);
-        a->show();
-        this->hide();
-    } else {
+    if (!matchPhone(phone)) {
         // 手机号格式不正确显示弹窗
         QMessageBox::warning(this, "格式错误",
                              "您输入的手机号格式有误，请检查后重试。",
                              QMessageBox::Ok);
     }
+    ui->input_phone->clear();
+    userMain->show();
+    emit sendUserPhoneSignal(phone);
+    this->hide();
 }
 
-//管理员登陆
+//管理员登录
 void MainWindow::on_pushButton_admin_login_clicked()
 {
-    b = new admin_login(this);
-    b->show();
+    admin_login *adminLogin = new admin_login(this);
+    adminLogin->show();
     this->hide();
 }
 

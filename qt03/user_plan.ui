@@ -86,7 +86,7 @@
      <string>4G流量</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="label_duration">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -104,7 +104,7 @@
      <string>分钟</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="label_traffic">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -140,7 +140,7 @@
      <string>资费</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
+   <widget class="QLabel" name="label_band">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -158,7 +158,7 @@
      <string>Mb</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_9">
+   <widget class="QLabel" name="label_fee">
     <property name="geometry">
      <rect>
       <x>310</x>

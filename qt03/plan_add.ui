@@ -11,14 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>增加套餐内容</string>
+   <string>管理套餐</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>0</y>
+      <x>60</x>
+      <y>10</y>
       <width>391</width>
       <height>51</height>
      </rect>
@@ -29,7 +29,10 @@
      </font>
     </property>
     <property name="text">
-     <string>管理套餐中的项目</string>
+     <string>管理套餐</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -104,7 +107,7 @@
      <string>宽带</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_money">
+   <widget class="QLineEdit" name="lineEdit_fee">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -114,7 +117,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_time">
+   <widget class="QLineEdit" name="lineEdit_duration">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -124,7 +127,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_flow">
+   <widget class="QLineEdit" name="lineEdit_traffic">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -147,7 +150,7 @@
    <widget class="QPushButton" name="pushButton_confirm">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>220</x>
       <y>260</y>
       <width>80</width>
       <height>31</height>

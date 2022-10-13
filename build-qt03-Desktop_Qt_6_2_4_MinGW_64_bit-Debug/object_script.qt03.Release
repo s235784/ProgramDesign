@@ -9,8 +9,9 @@ release/confirm.o
 release/main.o
 release/mainwindow.o
 release/plan_add.o
+release/user_all_plan.o
+release/user_com.o
 release/user_info.o
-release/user_login.o
 release/user_main.o
 release/user_plan.o
 release/user_selfchoose.o
@@ -24,8 +25,9 @@ release/moc_admin_wanted.o
 release/moc_confirm.o
 release/moc_mainwindow.o
 release/moc_plan_add.o
+release/moc_user_all_plan.o
+release/moc_user_com.o
 release/moc_user_info.o
-release/moc_user_login.o
 release/moc_user_main.o
 release/moc_user_plan.o
 release/moc_user_selfchoose.o

@@ -1,6 +1,7 @@
 #ifndef USER_PLAN_H
 #define USER_PLAN_H
 #include "user_com.h"
+#include <string>
 #include <QMainWindow>
 
 
@@ -18,13 +19,12 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-
     void on_pushButton_comm_clicked();
+    void getPhoneToUserPlan(std::string& phone);
 
 private:
     Ui::user_plan *ui;
     user_com *com;
-
 };
 
 #endif // USER_PLAN_H

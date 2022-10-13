@@ -161,7 +161,7 @@ Plan getPlanById(int id) {
 			return plan;
 		}
 	}
-	return {};
+    return {0, 0, 0, 0, 0};
 }
 
 bool isExistUserPlan(string& phone) {
@@ -175,7 +175,7 @@ bool isExistUserPlan(string& phone) {
 
 Plan getPlanByPhone(string& phone) {
 	list<UserPlan> userPlanList = readUserPlanList();
-	int id = 0; // todo
+    int id = 0;
 	for (UserPlan userPlan : userPlanList) {
 		if (userPlan.phone == phone) {
 			id = userPlan.planId;

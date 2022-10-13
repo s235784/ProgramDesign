@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>user_login</class>
- <widget class="QMainWindow" name="user_login">
+ <class>user_all_plan</class>
+ <widget class="QMainWindow" name="user_all_plan">
   <property name="geometry">
    <rect>
     <x>0</x>

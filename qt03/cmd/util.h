@@ -15,3 +15,4 @@ list<int> getRandIntList(int maxNum, int count);
 bool matchPhone(string phone);
 string getWantedPlanString(WantedPlan plan);
 bool compareWantedPlan(WantedPlan a, WantedPlan b);
+string getTwoPlacesDecimal(float value);

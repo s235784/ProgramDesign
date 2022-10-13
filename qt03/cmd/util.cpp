@@ -132,3 +132,13 @@ bool matchPhone(string phone) {
     regex reg("^[1][3,4,5,7,8][0-9]{9}$");
     return regex_match(phone.data(), reg);
 }
+
+/**
+ * @brief getTwoPlacesDecimal 获得两位小数的string
+ * @param value 要转换的数字
+ * @return 两位小数string
+ */
+string getTwoPlacesDecimal(float value) {
+    string str = to_string(value);
+    return str.substr(0, str.find(".") + 3);
+}
