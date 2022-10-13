@@ -11,5 +11,7 @@
         <file>logo5.jpg</file>
         <file>admin_logo.jpg</file>
         <file>arrow.jpg</file>
+        <file>off.jpg</file>
+        <file>on.jpg</file>
     </qresource>
 </RCC>

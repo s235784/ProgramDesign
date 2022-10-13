@@ -20,6 +20,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     plan_add.cpp \
+    user_com.cpp \
     user_info.cpp \
     user_login.cpp \
     user_main.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
     confirm.h \
     mainwindow.h \
     plan_add.h \
+    user_com.h \
     user_info.h \
     user_login.h \
     user_main.h \
@@ -57,6 +59,7 @@ FORMS += \
     confirm.ui \
     mainwindow.ui \
     plan_add.ui \
+    user_com.ui \
     user_info.ui \
     user_login.ui \
     user_main.ui \

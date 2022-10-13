@@ -179,7 +179,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>120</x>
       <y>280</y>
       <width>80</width>
       <height>31</height>
@@ -187,6 +187,19 @@
     </property>
     <property name="text">
      <string>确认</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_comm">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>280</y>
+      <width>80</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>评价</string>
     </property>
    </widget>
   </widget>

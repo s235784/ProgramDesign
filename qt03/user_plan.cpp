@@ -20,3 +20,11 @@ void user_plan::on_pushButton_clicked()
     delete this;
 }
 
+
+void user_plan::on_pushButton_comm_clicked()
+{
+    com=new user_com(this);
+    com->show();
+    this->hide();
+}
+

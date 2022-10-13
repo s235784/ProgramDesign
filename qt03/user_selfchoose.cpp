@@ -5,10 +5,13 @@ user_selfchoose::user_selfchoose(QWidget *parent) :
     ui(new Ui::user_selfchoose)
 {
     ui->setupUi(this);
+    // 4G流量只能输入数字
     QRegularExpressionValidator *pRevalidotor2=new QRegularExpressionValidator(QRegularExpression("[0-9]+$"),this);
     ui->lineEdit_flow->setValidator(pRevalidotor2);
+    // 通话时长只能输入数字
     QRegularExpressionValidator *pRevalidotor3=new QRegularExpressionValidator(QRegularExpression("[0-9]+$"),this);
     ui->lineEdit_time->setValidator(pRevalidotor3);
+    // 宽带只能输入数字
     QRegularExpressionValidator *pRevalidotor4=new QRegularExpressionValidator(QRegularExpression("[0-9]+$"),this);
     ui->lineEdit_band->setValidator(pRevalidotor4);
 

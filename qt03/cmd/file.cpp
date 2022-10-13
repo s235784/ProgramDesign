@@ -235,8 +235,8 @@ list<UserPlan> readUserPlanList() {
 }
 
 /*
-* Ìí¼ÓÒ»¸öÒâÏòÌ×²Í
-* ¶ÔÓÚÒÑÌí¼ÓµÄÌ×²Í´ÎÊı»á×Ô¶¯+1
+* æ·»åŠ ä¸€ä¸ªæ„å‘å¥—é¤
+* å¯¹äºå·²æ·»åŠ çš„å¥—é¤æ¬¡æ•°ä¼šè‡ªåŠ¨+1
 */
 void addWantedPlan(WantedPlan plan) {
 	list<WantedPlan> planListDisk = readWantedPlanList();
