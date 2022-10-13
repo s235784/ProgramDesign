@@ -68,7 +68,7 @@ void MainWindow::on_pushButton_admin_login_clicked()
 void MainWindow::paintEvent(QPaintEvent *event)
 {
     static int pos=0;
-    QString picture[1]={":/background.jpg"};
+    QString picture[1]={":/main_background2.jpg"};
     //对象
     QPainter* painter=new QPainter(this);
 
@@ -76,6 +76,6 @@ void MainWindow::paintEvent(QPaintEvent *event)
     QPixmap pixmap;
 
     pixmap.load(picture[pos]);
-     pixmap.scaled(518,299);
-    painter->drawPixmap(0,0,518,299,pixmap);
+     pixmap.scaled(596,315);
+    painter->drawPixmap(0,0,596,315,pixmap);
 }

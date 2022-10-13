@@ -1,7 +1,6 @@
 #ifndef USER_INFO_H
 #define USER_INFO_H
 #include <QMainWindow>
-#include "confirm.h"
 namespace Ui {
 class user_info;
 }
@@ -24,7 +23,6 @@ private slots:
 
 private:
     Ui::user_info *ui;
-    confirm *con;
 
 };
 

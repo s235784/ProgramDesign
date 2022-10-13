@@ -31,8 +31,8 @@ void admin_user_plan::paintEvent(QPaintEvent *event)
     QPixmap pixmap;
 
     pixmap.load(picture[pos]);
-    pixmap.scaled(356,240);
-    painter->drawPixmap(0,0,356,240,pixmap);
+    pixmap.scaled(500,123);
+    painter->drawPixmap(0,0,500,123,pixmap);
 }
 
 void admin_user_plan::showEvent(QShowEvent* event) {

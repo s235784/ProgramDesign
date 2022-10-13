@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>518</width>
-    <height>299</height>
+    <width>596</width>
+    <height>315</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,8 +23,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>30</y>
+      <x>380</x>
+      <y>40</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -35,7 +35,9 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
+     <string notr="true">
+color: rgb(255, 255, 255);
+</string>
     </property>
     <property name="text">
      <string> 欢迎</string>
@@ -44,8 +46,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>90</y>
+      <x>320</x>
+      <y>100</y>
       <width>271</width>
       <height>31</height>
      </rect>
@@ -56,20 +58,47 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:rgb(255, 255, 255)</string>
+     <string notr="true">
+color: rgb(255, 255, 255);
+</string>
     </property>
     <property name="text">
-     <string>电信优惠套餐推荐系统</string>
+     <string>尊敬的电信用户</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_exit">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>210</y>
+      <x>290</x>
+      <y>240</y>
       <width>71</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	font: 10pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}</string>
     </property>
     <property name="text">
      <string>退出</string>
@@ -78,11 +107,36 @@
    <widget class="QPushButton" name="pushButton_login">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>510</x>
       <y>150</y>
       <width>71</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	font: 10pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}</string>
     </property>
     <property name="text">
      <string>登录</string>
@@ -91,11 +145,36 @@
    <widget class="QPushButton" name="pushButton_admin_login">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>200</y>
+      <x>510</x>
+      <y>240</y>
       <width>80</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	font: 10pt &quot;微软雅黑&quot;;
+    color: #2f3640;
+    background-color: #f5f6fa;
+    border-color: #2f3640;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/**鼠标停留在按钮上的样式**/
+QPushButton::hover{	
+    color: #FFFFFF;
+    background-color: #718093;
+    border-color: #2f3640;
+}
+
+/**鼠标按压下去的样式**/
+QPushButton::pressed,QPushButton::checked{
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);
+}</string>
     </property>
     <property name="text">
      <string>管理员登录</string>
@@ -104,11 +183,15 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>230</y>
+      <x>20</x>
+      <y>120</y>
       <width>191</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>made by NuoTian and Gary</string>
@@ -117,7 +200,7 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>290</x>
       <y>150</y>
       <width>71</width>
       <height>31</height>
@@ -125,38 +208,23 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>15</pointsize>
+      <pointsize>10</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:rgb(255, 255, 255)</string>
+     <string notr="true">
+color: rgb(255, 255, 255);
+</string>
     </property>
     <property name="text">
      <string>手机号</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>161</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/logo.jpg);
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="input_phone">
     <property name="geometry">
      <rect>
-      <x>192</x>
-      <y>149</y>
+      <x>340</x>
+      <y>150</y>
       <width>151</width>
       <height>31</height>
      </rect>
@@ -168,7 +236,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>518</width>
+     <width>596</width>
      <height>17</height>
     </rect>
    </property>

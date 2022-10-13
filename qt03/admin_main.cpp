@@ -3,6 +3,9 @@
 #include "admin_wanted.h"
 #include "admin_user_plan.h"
 #include "ui_admin_main.h"
+#include "admin_login.h"
+
+admin_login *ad_Log;
 
 admin_main::admin_main(QWidget *parent) :
     QMainWindow(parent),
@@ -33,8 +36,9 @@ void admin_main::paintEvent(QPaintEvent *event)
 void admin_main::on_pushButton_back_clicked()
 {
     // 返回上一个界面
-    this->parentWidget()->show();
-    delete this;
+    ad_Log = new admin_login(this);
+    ad_Log->show();
+    this->hide();
 }
 
 

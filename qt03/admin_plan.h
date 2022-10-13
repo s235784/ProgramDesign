@@ -1,6 +1,5 @@
 #ifndef ADMIN_PLAN_H
 #define ADMIN_PLAN_H
-
 #include "QWidget"
 #include "QPainter"
 #include "QPixmap"
@@ -34,6 +33,7 @@ private:
     void handleEditBtnClicked();
     void handleDelBtnClicked();
     void refreshPlanList();
+
 
 signals:
     void sendInitPlanEditSignal(int id);

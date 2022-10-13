@@ -7,6 +7,8 @@
 #include <QMessageBox>
 
 int planId = 0;
+admin_plan *ad_Plan;
+
 
 plan_add::plan_add(QWidget *parent) :
     QMainWindow(parent),
@@ -78,8 +80,9 @@ void plan_add::on_pushButton_confirm_clicked()
 void plan_add::on_pushButton_back_clicked()
 {
     // 返回上一个界面
-    this->parentWidget()->show();
-    delete this;
+    ad_Plan =new admin_plan;
+    ad_Plan->show();
+    this->hide();
 }
 
 void plan_add::getInitPlanEditSignal(int id) {

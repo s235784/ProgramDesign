@@ -14,22 +14,6 @@
    <string>用户套餐</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="logo">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>101</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/logo.jpg);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_back">
     <property name="geometry">
      <rect>
@@ -168,6 +152,22 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>带宽/Mb</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>181</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/logo.jpg);</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
