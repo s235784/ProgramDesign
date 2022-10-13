@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    admin_checkuser.cpp \
     admin_login.cpp \
     admin_main.cpp \
     admin_plan.cpp \
@@ -16,7 +17,6 @@ SOURCES += \
     admin_wanted.cpp \
     cmd/file.cpp \
     cmd/util.cpp \
-    confirm.cpp \
     main.cpp \
     mainwindow.cpp \
     plan_add.cpp \
@@ -25,10 +25,10 @@ SOURCES += \
     user_info.cpp \
     user_main.cpp \
     user_plan.cpp \
-    user_selfchoose.cpp \
-    warning.cpp
+    user_selfchoose.cpp
 
 HEADERS += \
+    admin_checkuser.h \
     admin_login.h \
     admin_main.h \
     admin_plan.h \
@@ -39,7 +39,6 @@ HEADERS += \
     cmd/userPlanStruct.h \
     cmd/util.h \
     cmd/wantedPlanStruct.h \
-    confirm.h \
     mainwindow.h \
     plan_add.h \
     user_all_plan.h \
@@ -47,16 +46,15 @@ HEADERS += \
     user_info.h \
     user_main.h \
     user_plan.h \
-    user_selfchoose.h \
-    warning.h
+    user_selfchoose.h
 
 FORMS += \
+    admin_checkuser.ui \
     admin_login.ui \
     admin_main.ui \
     admin_plan.ui \
     admin_user_plan.ui \
     admin_wanted.ui \
-    confirm.ui \
     mainwindow.ui \
     plan_add.ui \
     user_all_plan.ui \
@@ -64,8 +62,7 @@ FORMS += \
     user_info.ui \
     user_main.ui \
     user_plan.ui \
-    user_selfchoose.ui \
-    warning.ui
+    user_selfchoose.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

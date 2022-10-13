@@ -4,7 +4,10 @@
 #include <string>
 #include <iostream>
 #include <QMessageBox>
+#include "admin_login.h"
+#include "mainwindow.h"
 
+MainWindow *Main;
 admin_login::admin_login(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::admin_login)
@@ -24,13 +27,11 @@ admin_login::~admin_login()
 void admin_login::paintEvent(QPaintEvent *event)
 {
     static int pos=0;
-    QString picture[1]={":/background.jpg"};
+    QString picture[1]={":/admin_back.jpg"};
     // 对象
     QPainter* painter=new QPainter(this);
-
     // 画图
     QPixmap pixmap;
-
     pixmap.load(picture[pos]);
     pixmap.scaled(518,299);
     painter->drawPixmap(0,0,518,299,pixmap);
@@ -38,8 +39,9 @@ void admin_login::paintEvent(QPaintEvent *event)
 
 void admin_login::on_pushButton_back_clicked()
 {
-    this->parentWidget()->show();
-    delete this;
+    Main=new MainWindow;
+    Main->show();
+    this->hide();
 
 }
 

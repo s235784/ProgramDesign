@@ -13,5 +13,9 @@
         <file>arrow.jpg</file>
         <file>off.jpg</file>
         <file>on.jpg</file>
+        <file>main_backgroud.jpg</file>
+        <file>main_background2.jpg</file>
+        <file>new_logo.png</file>
+        <file>admin_back.jpg</file>
     </qresource>
 </RCC>

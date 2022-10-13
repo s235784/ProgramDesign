@@ -21,11 +21,11 @@ class admin_login : public QMainWindow
 public:
     explicit admin_login(QWidget *parent = nullptr);
     ~admin_login();
-    void paintEvent(QPaintEvent *event);
+
 
 private slots:
     void on_pushButton_back_clicked();
-
+    void paintEvent(QPaintEvent *event);
     void on_pushButton_login_clicked();
 
 private:

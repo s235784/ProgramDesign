@@ -2,7 +2,6 @@
 #include "cmd/util.h"
 #include "cmd/planStruct.h"
 #include "plan_add.h"
-#include "admin_main.h"
 #include "admin_plan.h"
 #include "qboxlayout.h"
 #include "qcheckbox.h"
@@ -10,6 +9,7 @@
 #include <list>
 #include <string>
 #include <QMessageBox>
+#include "admin_main.h"
 
 admin_main *adminMainUI;
 plan_add *addPlanUI;
@@ -39,8 +39,8 @@ void admin_plan::paintEvent(QPaintEvent *event)
     QPixmap pixmap;
 
     pixmap.load(picture[pos]);
-    pixmap.scaled(356,240);
-    painter->drawPixmap(0,0,356,240,pixmap);
+    pixmap.scaled(500,123);
+    painter->drawPixmap(0,0,500,123,pixmap);
 }
 
 void admin_plan::showEvent(QShowEvent* event) {
@@ -52,8 +52,9 @@ void admin_plan::showEvent(QShowEvent* event) {
 
 void admin_plan::on_pushButton_back_clicked() {
     // 返回上一个界面
-    this->parentWidget()->show();
-    delete this;
+   adminMainUI =new admin_main;
+    adminMainUI->show();
+    this->hide();
 }
 
 void admin_plan::handleEditBtnClicked() {
@@ -61,8 +62,10 @@ void admin_plan::handleEditBtnClicked() {
     QPushButton* btn = (QPushButton*) sender();
     int id = btn->property("itemId").toInt();
     addPlanUI->show();
+    this->hide();
     // 传递ID参数
     emit sendInitPlanEditSignal(id);
+    addPlanUI->show();
     this->hide();
 }
 

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>confirm</class>
- <widget class="QMainWindow" name="confirm">
+ <class>admin_checkuser</class>
+ <widget class="QMainWindow" name="admin_checkuser">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>248</width>
-    <height>160</height>
+    <width>556</width>
+    <height>389</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>订购成功</string>
+   <string>查看用户评价</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>10</y>
-      <width>71</width>
-      <height>21</height>
+      <x>180</x>
+      <y>0</y>
+      <width>301</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
@@ -29,38 +29,30 @@
      </font>
     </property>
     <property name="text">
-     <string>恭喜！</string>
+     <string>来自用户的评价</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QListWidget" name="listWidget">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>40</y>
-      <width>191</width>
-      <height>16</height>
+      <y>70</y>
+      <width>461</width>
+      <height>191</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>您已成功订购此套餐！</string>
-    </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButton_back">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>80</y>
-      <width>71</width>
+      <x>10</x>
+      <y>300</y>
+      <width>80</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>确定</string>
+     <string>返回</string>
     </property>
    </widget>
   </widget>
@@ -69,16 +61,10 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>248</width>
+     <width>556</width>
      <height>17</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>  </string>
-    </property>
-   </widget>
-   <addaction name="menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
