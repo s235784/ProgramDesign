@@ -32,10 +32,10 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
-    QLineEdit *lineEdit_time;
+    QLineEdit *lineEdit_duration;
     QLabel *label_6;
     QLabel *label_7;
-    QLineEdit *lineEdit_flow;
+    QLineEdit *lineEdit_traffic;
     QLineEdit *lineEdit_band;
     QLabel *label_8;
     QLabel *label_9;
@@ -76,9 +76,9 @@ public:
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(130, 140, 81, 21));
         label_5->setFont(font1);
-        lineEdit_time = new QLineEdit(centralwidget);
-        lineEdit_time->setObjectName(QString::fromUtf8("lineEdit_time"));
-        lineEdit_time->setGeometry(QRect(230, 80, 51, 20));
+        lineEdit_duration = new QLineEdit(centralwidget);
+        lineEdit_duration->setObjectName(QString::fromUtf8("lineEdit_duration"));
+        lineEdit_duration->setGeometry(QRect(230, 80, 51, 20));
         label_6 = new QLabel(centralwidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(290, 80, 51, 21));
@@ -87,9 +87,9 @@ public:
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(290, 110, 51, 21));
         label_7->setFont(font1);
-        lineEdit_flow = new QLineEdit(centralwidget);
-        lineEdit_flow->setObjectName(QString::fromUtf8("lineEdit_flow"));
-        lineEdit_flow->setGeometry(QRect(230, 110, 51, 20));
+        lineEdit_traffic = new QLineEdit(centralwidget);
+        lineEdit_traffic->setObjectName(QString::fromUtf8("lineEdit_traffic"));
+        lineEdit_traffic->setGeometry(QRect(230, 110, 51, 20));
         lineEdit_band = new QLineEdit(centralwidget);
         lineEdit_band->setObjectName(QString::fromUtf8("lineEdit_band"));
         lineEdit_band->setGeometry(QRect(230, 140, 51, 20));

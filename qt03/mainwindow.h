@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 #include"user_all_plan.h"
 #include"admin_login.h"
-#include "warning.h"
 #include "QWidget"
 #include "QPainter"
 #include "QPixmap"

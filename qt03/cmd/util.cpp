@@ -1,4 +1,5 @@
 #include "planStruct.h"
+#include "commentStruct.h"
 #include "userPlanStruct.h"
 #include "wantedPlanStruct.h"
 #include <list>
@@ -49,6 +50,19 @@ string getUserPlanString(UserPlan userPlan) {
     content.append(userPlan.phone);
     content.append(" ");
     content.append(to_string(userPlan.planId));
+    content.append("\n");
+    return content;
+}
+
+string getCommentString(Comment comment) {
+    string content = "";
+    content.append(to_string(comment.id));
+    content.append(" ");
+    content.append(comment.phone);
+    content.append(" ");
+    content.append(to_string(comment.fraction));
+    content.append(" ");
+    content.append(comment.content);
     content.append("\n");
     return content;
 }

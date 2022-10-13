@@ -22,10 +22,9 @@ SOURCES += \
     plan_add.cpp \
     user_all_plan.cpp \
     user_com.cpp \
-    user_info.cpp \
+    user_filter.cpp \
     user_main.cpp \
-    user_plan.cpp \
-    user_selfchoose.cpp
+    user_plan.cpp
 
 HEADERS += \
     admin_checkuser.h \
@@ -34,6 +33,7 @@ HEADERS += \
     admin_plan.h \
     admin_user_plan.h \
     admin_wanted.h \
+    cmd/commentStruct.h \
     cmd/file.h \
     cmd/planStruct.h \
     cmd/userPlanStruct.h \
@@ -43,10 +43,9 @@ HEADERS += \
     plan_add.h \
     user_all_plan.h \
     user_com.h \
-    user_info.h \
+    user_filter.h \
     user_main.h \
-    user_plan.h \
-    user_selfchoose.h
+    user_plan.h
 
 FORMS += \
     admin_checkuser.ui \
@@ -59,10 +58,9 @@ FORMS += \
     plan_add.ui \
     user_all_plan.ui \
     user_com.ui \
-    user_info.ui \
+    user_filter.ui \
     user_main.ui \
-    user_plan.ui \
-    user_selfchoose.ui
+    user_plan.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

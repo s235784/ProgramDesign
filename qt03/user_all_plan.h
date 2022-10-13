@@ -1,7 +1,6 @@
 #ifndef USER_ALL_PLAN_H
 #define USER_ALL_PLAN_H
-#include "warning.h"
-#include "user_selfchoose.h"
+#include "user_filter.h"
 #include "QWidget"
 #include "QPainter"
 #include "QPixmap"
@@ -32,11 +31,13 @@ private slots:
 
 private:
     Ui::user_all_plan *ui;
-    user_selfchoose *more;
+    user_filter *userFilterUI;
     std::string phone;
     void refreshPlanList();
-    void handleChoseBtnClicked();
+    void handleChooseBtnClicked();
 
+signals:
+    void sendPhoneToFilter(std::string& phone);
 };
 
 #endif // USER_ALL_PLAN_H

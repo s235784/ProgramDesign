@@ -1,7 +1,6 @@
 #include "cmd/file.h"
 #include "cmd/util.h"
 #include "cmd/planStruct.h"
-#include "qlayout.h"
 #include "user_plan.h"
 #include "ui_user_plan.h"
 #include <string>

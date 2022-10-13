@@ -1,5 +1,6 @@
 #pragma once
 #include "planStruct.h"
+#include "commentStruct.h"
 #include "userPlanStruct.h"
 #include "wantedPlanStruct.h"
 #include <string>
@@ -21,3 +22,5 @@ void updateUserPlanByPhone(string& phone, int id);
 list<UserPlan> readUserPlanList();
 void addWantedPlan(WantedPlan plan);
 list<WantedPlan> readWantedPlanList();
+void addComment(Comment comment);
+list<Comment> readCommentList();

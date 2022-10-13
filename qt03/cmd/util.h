@@ -1,5 +1,6 @@
 #pragma once
 #include "planStruct.h"
+#include "commentStruct.h"
 #include "userPlanStruct.h"
 #include "wantedPlanStruct.h"
 #include <list>
@@ -8,6 +9,7 @@ using namespace std;
 
 string getPlanString(Plan plan);
 string getUserPlanString(UserPlan userPlan);
+string getCommentString(Comment comment);
 bool comparePlan(Plan a, Plan b);
 list<string> splitString(string str, string deli = " ");
 int getDecimalPlaces(float num);

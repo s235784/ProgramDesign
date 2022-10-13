@@ -1,5 +1,6 @@
 #include "util.h"
 #include "planStruct.h"
+#include "commentStruct.h"
 #include "userPlanStruct.h"
 #include "wantedPlanStruct.h"
 #include <list>
@@ -11,6 +12,7 @@ using namespace std;
 list<Plan> readPlanList();
 list<UserPlan> readUserPlanList();
 list<WantedPlan> readWantedPlanList();
+list<Comment> readCommentList();
 string readFile(string& file);
 void writeFileTrunc(string& file, string& content);
 void writeFileApp(string& file, string& content);
@@ -19,6 +21,7 @@ string file_properties = "config.txt";
 string file_plan = "plan.txt";
 string file_user_plan = "userPlan.txt";
 string file_wanted_plan = "wantedPlan.txt";
+string file_comment = "comment.txt";
 
 void initProperties() {
 	if (!ifstream{ file_properties }) {
@@ -301,6 +304,56 @@ list<WantedPlan> readWantedPlanList() {
 		}
 	}
 	return wantedPlanList;
+}
+
+void addComment(Comment comment) {
+    list<Comment> commentListDisk = readCommentList();
+    list<Comment> commentListNew;
+    if (!commentListDisk.empty()) {
+        int maxId = 0;
+        string content;
+        for (const auto& commentDisk : commentListDisk) {
+            content.append(getCommentString(commentDisk));
+            maxId = commentDisk.id > maxId ? commentDisk.id : maxId;
+        }
+        comment.id = maxId + 1;
+        content = getCommentString(comment);
+        writeFileTrunc(file_comment, content);
+    }
+    else {
+        comment.id = 1;
+        string content = getCommentString(comment);
+        writeFileTrunc(file_comment, content);
+    }
+}
+
+list<Comment> readCommentList() {
+    list<Comment> commentList;
+    string fileDisk = readFile(file_comment);
+    if (!fileDisk.empty()) {
+        if (fileDisk[fileDisk.length() - 1] == '\n') {
+            fileDisk.pop_back();
+        }
+        list<string> commentTextList = splitString(fileDisk, "\n");
+        for (const auto& commentText : commentTextList) {
+            list<string> commentStructText = splitString(commentText, " ");
+            Comment comment = {};
+            int index = 0;
+            for (const auto& text : commentStructText) {
+                if (index == 0)
+                    comment.id = stoi(text);
+                else if (index == 1)
+                    comment.phone = text;
+                else if (index == 2)
+                    comment.fraction = stoi(text);
+                else if (index == 3)
+                    comment.content = text;
+                index++;
+            }
+            commentList.push_back(comment);
+        }
+    }
+    return commentList;
 }
 
 string readFile(string& file) {

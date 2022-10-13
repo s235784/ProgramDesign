@@ -49,6 +49,7 @@ void MainWindow::on_pushButton_login_clicked()
         QMessageBox::warning(this, "格式错误",
                              "您输入的手机号格式有误，请检查后重试。",
                              QMessageBox::Ok);
+        return;
     }
     ui->input_phone->clear();
     userMain->show();
@@ -76,6 +77,6 @@ void MainWindow::paintEvent(QPaintEvent *event)
     QPixmap pixmap;
 
     pixmap.load(picture[pos]);
-     pixmap.scaled(596,315);
+    pixmap.scaled(596,315);
     painter->drawPixmap(0,0,596,315,pixmap);
 }

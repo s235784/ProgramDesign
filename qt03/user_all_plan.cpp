@@ -1,6 +1,7 @@
 #include "cmd/file.h"
 #include "cmd/util.h"
 #include "cmd/planStruct.h"
+#include "user_filter.h"
 #include "qboxlayout.h"
 #include "user_all_plan.h"
 #include "ui_user_all_plan.h"
@@ -13,7 +14,7 @@ user_all_plan::user_all_plan(QWidget *parent) :
     ui(new Ui::user_all_plan)
 {
     ui->setupUi(this);
-    more = new user_selfchoose(this);
+    userFilterUI = new user_filter(this);
 }
 
 user_all_plan::~user_all_plan()
@@ -38,12 +39,16 @@ void user_all_plan::paintEvent(QPaintEvent *event)
 
 void user_all_plan::showEvent(QShowEvent* event) {
     refreshPlanList();
+    connect(this, SIGNAL(sendPhoneToFilter(std::string&)),
+            userFilterUI, SLOT(getPhoneToFilter(std::string&)),
+            Qt::UniqueConnection);
 }
 
 void user_all_plan::on_pushButton_more_clicked()
 {
-    //跳转到用户自己选择
-    more->show();
+    // 跳转到筛选界面
+    userFilterUI->show();
+    emit sendPhoneToFilter(phone);
     this->hide();
 }
 
@@ -54,7 +59,7 @@ void user_all_plan::on_pushButton_back_clicked()
     delete this;
 }
 
-void user_all_plan::handleChoseBtnClicked() {
+void user_all_plan::handleChooseBtnClicked() {
     // 点击订购按钮
     QPushButton* btn = (QPushButton*) sender();
     int id = btn->property("itemId").toInt();
@@ -97,17 +102,17 @@ void user_all_plan::refreshPlanList() {
         broadbandTextPlan->setText(QString::fromStdString(to_string(plan.broadband)));
         layout->addWidget(broadbandTextPlan);
 
-        QPushButton *choseButtonPlan = new QPushButton(w);
-        choseButtonPlan->setText("订购");
-        choseButtonPlan->setProperty("itemId", plan.id);
-        layout->addWidget(choseButtonPlan);
+        QPushButton *chooseButtonPlan = new QPushButton(w);
+        chooseButtonPlan->setText("订购");
+        chooseButtonPlan->setProperty("itemId", plan.id);
+        layout->addWidget(chooseButtonPlan);
 
         w->setLayout(layout);
         ui->listWidget->setItemWidget(item,w);
 
         // 绑定事件
-        connect(choseButtonPlan, &QPushButton::clicked,
-                this, &user_all_plan::handleChoseBtnClicked,
+        connect(chooseButtonPlan, &QPushButton::clicked,
+                this, &user_all_plan::handleChooseBtnClicked,
                 Qt::UniqueConnection);
     }
 }

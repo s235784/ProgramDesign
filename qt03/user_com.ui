@@ -238,7 +238,7 @@ QPushButton::checked
      <string>请对我们的服务进行评价</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_com">
+   <widget class="QTextEdit" name="textEdit_content">
     <property name="geometry">
      <rect>
       <x>70</x>

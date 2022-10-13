@@ -32,7 +32,7 @@ public:
     QLabel *labelTitle;
     QPushButton *pushButton3;
     QLabel *label;
-    QTextEdit *textEdit_com;
+    QTextEdit *textEdit_content;
     QPushButton *pushButton_submit;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -145,9 +145,9 @@ public:
         QFont font1;
         font1.setPointSize(20);
         label->setFont(font1);
-        textEdit_com = new QTextEdit(centralwidget);
-        textEdit_com->setObjectName(QString::fromUtf8("textEdit_com"));
-        textEdit_com->setGeometry(QRect(70, 140, 381, 191));
+        textEdit_content = new QTextEdit(centralwidget);
+        textEdit_content->setObjectName(QString::fromUtf8("textEdit_content"));
+        textEdit_content->setGeometry(QRect(70, 140, 381, 191));
         pushButton_submit = new QPushButton(centralwidget);
         pushButton_submit->setObjectName(QString::fromUtf8("pushButton_submit"));
         pushButton_submit->setGeometry(QRect(220, 360, 80, 31));

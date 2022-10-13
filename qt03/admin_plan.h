@@ -3,7 +3,6 @@
 #include "QWidget"
 #include "QPainter"
 #include "QPixmap"
-#include "plan_add.h"
 #include <QMainWindow>
 #include <QAbstractButton>
 
