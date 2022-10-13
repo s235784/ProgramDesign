@@ -22,6 +22,7 @@ private slots:
     void on_pushButton_comm_clicked();
     void getPhoneToUserPlan(std::string& phone);
 
+
 private:
     Ui::user_plan *ui;
     user_com *com;

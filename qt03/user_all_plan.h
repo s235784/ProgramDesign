@@ -19,7 +19,7 @@ public:
     explicit user_all_plan(QWidget *parent = nullptr);
     ~user_all_plan();
 
-    void paintEvent(QPaintEvent *event);
+
 
 protected:
     void showEvent(QShowEvent* event);

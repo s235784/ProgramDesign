@@ -3,7 +3,9 @@
 #include "user_com.h"
 #include "ui_user_com.h"
 #include "QMessageBox"
+#include "user_plan.h"
 
+user_plan *user_Pl;
 user_com::user_com(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::user_com)
@@ -102,5 +104,14 @@ int user_com::getCheckBoxFraction() {
 
 void user_com::getPhoneToUserComment(std::string& phone) {
     user_com::phone = phone;
+}
+
+
+void user_com::on_pushButton_submit_2_clicked()
+{
+    //返回上一个窗口
+   user_Pl =new user_plan;
+    user_Pl->show();
+     this->hide();
 }
 

@@ -27,6 +27,8 @@ private slots:
     void on_pushButton_user_plan_clicked();
     void on_pushButton_wanted_clicked();
 
+    void on_pushButton_wanted_2_clicked();
+
 private:
     Ui::admin_main *ui;
     admin_plan *planUI;

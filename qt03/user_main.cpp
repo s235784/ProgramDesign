@@ -3,6 +3,9 @@
 #include "ui_user_main.h"
 #include <string>
 #include <QMessageBox>
+#include "mainwindow.h"
+
+MainWindow *user_Win;
 
 user_main::user_main(QWidget *parent) :
     QMainWindow(parent),
@@ -45,12 +48,27 @@ void user_main::on_pushButton_2_clicked()
 void user_main::on_pushButton_3_clicked()
 {
     //返回上一个窗口
-    this->parentWidget()->show();
-    delete this;
+    user_Win =new MainWindow;
+    user_Win->show();
+     this->hide();
 }
 
 void user_main::getUserPhoneSignal(std::string& phone) {
     // 传递用户手机号
     user_main::phone = phone;
 }
+//背景图片
+void user_main::paintEvent(QPaintEvent *event)
+{
+    static int pos=0;
+    QString picture[1]={":/user_main.png"};
+    //对象
+    QPainter* painter=new QPainter(this);
 
+    //画图
+    QPixmap pixmap;
+
+    pixmap.load(picture[pos]);
+    pixmap.scaled(598,325);
+    painter->drawPixmap(0,0,598,325,pixmap);
+}

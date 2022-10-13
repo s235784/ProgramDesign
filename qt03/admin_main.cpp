@@ -4,8 +4,10 @@
 #include "admin_user_plan.h"
 #include "ui_admin_main.h"
 #include "admin_login.h"
+#include "admin_checkuser.h"
 
 admin_login *ad_Log;
+admin_checkuser *ad_Check;
 
 admin_main::admin_main(QWidget *parent) :
     QMainWindow(parent),
@@ -21,7 +23,7 @@ admin_main::~admin_main()
 void admin_main::paintEvent(QPaintEvent *event)
 {
     static int pos=0;
-    QString picture[1]={":/background.jpg"};
+    QString picture[1]={":/admin_MainBack.jpg"};
     // 对象
     QPainter* painter=new QPainter(this);
 
@@ -29,8 +31,8 @@ void admin_main::paintEvent(QPaintEvent *event)
     QPixmap pixmap;
 
     pixmap.load(picture[pos]);
-    pixmap.scaled(356,240);
-    painter->drawPixmap(0,0,356,240,pixmap);
+    pixmap.scaled(439,277);
+    painter->drawPixmap(0,0,439,277,pixmap);
 }
 
 void admin_main::on_pushButton_back_clicked()
@@ -61,6 +63,14 @@ void admin_main::on_pushButton_wanted_clicked(){
     // 跳转到用户意向界面
     admin_wanted *wantedUI = new admin_wanted(this);
     wantedUI->show();
+    this->hide();
+}
+
+
+void admin_main::on_pushButton_wanted_2_clicked()
+{
+    ad_Check = new admin_checkuser(this);
+    ad_Check->show();
     this->hide();
 }
 

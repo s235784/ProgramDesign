@@ -9,7 +9,9 @@
 #include <string>
 #include <QMessageBox>
 #include <QHBoxLayout>
+#include "user_all_plan.h"
 
+user_all_plan *user_All;
 user_filter::user_filter(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::user_filter)
@@ -87,8 +89,9 @@ void user_filter::on_pushButton_confirm_clicked() {
 void user_filter::on_pushButton_back_clicked()
 {
     // 返回上一个窗口
-    this->parentWidget()->show();
-    delete this;
+    user_All =new user_all_plan;
+    user_All->show();
+     this->hide();
 }
 
 void user_filter::handleChooseBtnClicked() {

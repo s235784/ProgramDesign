@@ -17,5 +17,16 @@
         <file>main_background2.jpg</file>
         <file>new_logo.png</file>
         <file>admin_back.jpg</file>
+        <file>admin_MainBack.jpg</file>
+        <file>logo_trans.png</file>
+        <file>user_plan.png</file>
+        <file>logo6.png</file>
+        <file>user_main.png</file>
+        <file>all_plan.png</file>
+        <file>all_plan3.png</file>
+        <file>user_fliter1.png</file>
+        <file>user_fliter2.png</file>
+        <file>user_plan_new.png</file>
+        <file>user_com.png</file>
     </qresource>
 </RCC>

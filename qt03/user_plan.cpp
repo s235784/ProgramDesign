@@ -57,3 +57,4 @@ void user_plan::getPhoneToUserPlan(std::string& phone) {
     ui->label_band->setText(QString::fromStdString(band));
 }
 
+

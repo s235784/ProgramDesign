@@ -19,7 +19,7 @@ public:
     ~user_main();
 
 protected:
-    void showEvent(QShowEvent* event);
+
 
 private slots:
     void on_pushButton_userplan_clicked();
@@ -29,6 +29,9 @@ private slots:
     void on_pushButton_2_clicked();
 
     void getUserPhoneSignal(std::string& phone);
+     void paintEvent(QPaintEvent *event);
+      void showEvent(QShowEvent* event);
+
 
 private:
     Ui::user_main *ui;

@@ -108,7 +108,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>510</x>
-      <y>150</y>
+      <y>170</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -183,7 +183,7 @@ QPushButton::pressed,QPushButton::checked{
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>80</x>
       <y>120</y>
       <width>191</width>
       <height>31</height>
@@ -194,14 +194,14 @@ QPushButton::pressed,QPushButton::checked{
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>made by NuoTian and Gary</string>
+     <string>Made by NuoTian and Gary</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>150</y>
+      <y>170</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -224,7 +224,7 @@ color: rgb(255, 255, 255);
     <property name="geometry">
      <rect>
       <x>340</x>
-      <y>150</y>
+      <y>170</y>
       <width>151</width>
       <height>31</height>
      </rect>

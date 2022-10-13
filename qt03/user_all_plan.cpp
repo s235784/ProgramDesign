@@ -8,7 +8,9 @@
 #include <list>
 #include <string>
 #include <QMessageBox>
+#include "user_main.h"
 
+user_main *user_Main;
 user_all_plan::user_all_plan(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::user_all_plan)
@@ -22,20 +24,6 @@ user_all_plan::~user_all_plan()
     delete ui;
 }
 
-void user_all_plan::paintEvent(QPaintEvent *event)
-{
-    static int pos=0;
-    QString picture[1]={":/back_user.jpg"};
-    //对象
-    QPainter* painter=new QPainter(this);
-
-    //画图
-    QPixmap pixmap;
-
-    pixmap.load(picture[pos]);
-    pixmap.scaled(840,578);
-    painter->drawPixmap(0,0,840,578,pixmap);
-}
 
 void user_all_plan::showEvent(QShowEvent* event) {
     refreshPlanList();
@@ -54,13 +42,15 @@ void user_all_plan::on_pushButton_more_clicked()
 
 void user_all_plan::on_pushButton_back_clicked()
 {
-    //返回上一个窗口
-    this->parentWidget()->show();
-    delete this;
+   // 返回上一个窗口
+    user_Main =new user_main;
+    user_Main->show();
+     this->hide();
 }
 
 void user_all_plan::handleChooseBtnClicked() {
     // 点击订购按钮
+
     QPushButton* btn = (QPushButton*) sender();
     int id = btn->property("itemId").toInt();
     updateUserPlanByPhone(phone, id);
