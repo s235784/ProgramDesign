@@ -28,5 +28,6 @@
         <file>user_fliter2.png</file>
         <file>user_plan_new.png</file>
         <file>user_com.png</file>
+        <file>user_comm.png</file>
     </qresource>
 </RCC>

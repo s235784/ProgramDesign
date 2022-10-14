@@ -19,3 +19,17 @@ void admin_checkuser::on_pushButton_back_clicked()
     delete this;
 }
 
+void admin_checkuser::paintEvent(QPaintEvent *event)
+{
+    static int pos=0;
+    QString picture[1]={":/background.jpg"};
+    //对象
+    QPainter* painter=new QPainter(this);
+
+    //画图
+    QPixmap pixmap;
+
+    pixmap.load(picture[pos]);
+    pixmap.scaled(500,123);
+    painter->drawPixmap(0,0,500,123,pixmap);
+}

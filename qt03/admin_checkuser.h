@@ -18,6 +18,7 @@ public:
 
 private slots:
     void on_pushButton_back_clicked();
+     void paintEvent(QPaintEvent *event);
 
 private:
     Ui::admin_checkuser *ui;

@@ -5,6 +5,9 @@
 #include "ui_user_plan.h"
 #include <string>
 #include <QMessageBox>
+#include <user_main.h>
+
+
 
 user_plan::user_plan(QWidget *parent) :
     QMainWindow(parent),
@@ -38,6 +41,7 @@ void user_plan::getPhoneToUserPlan(std::string& phone) {
         QMessageBox::warning(this, tr("提示"),
                              tr("您还没有订购任何套餐，赶快去选一个吧。"),
                              QMessageBox::Ok);
+
     }
 
     string fee = getTwoPlacesDecimal(plan.fee);
