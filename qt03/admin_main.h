@@ -4,7 +4,6 @@
 #include "QWidget"
 #include "QPainter"
 #include "QPixmap"
-#include "admin_plan.h"
 
 namespace Ui {
 class admin_main;
@@ -31,7 +30,6 @@ private slots:
 
 private:
     Ui::admin_main *ui;
-    admin_plan *planUI;
 
 };
 

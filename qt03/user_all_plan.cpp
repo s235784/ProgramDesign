@@ -10,6 +10,8 @@
 #include <QMessageBox>
 #include "user_main.h"
 
+extern string phone;
+
 user_main *user_Main;
 user_all_plan::user_all_plan(QWidget *parent) :
     QMainWindow(parent),
@@ -27,16 +29,12 @@ user_all_plan::~user_all_plan()
 
 void user_all_plan::showEvent(QShowEvent* event) {
     refreshPlanList();
-    connect(this, SIGNAL(sendPhoneToFilter(std::string&)),
-            userFilterUI, SLOT(getPhoneToFilter(std::string&)),
-            Qt::UniqueConnection);
 }
 
 void user_all_plan::on_pushButton_more_clicked()
 {
     // 跳转到筛选界面
     userFilterUI->show();
-    emit sendPhoneToFilter(phone);
     this->hide();
 }
 
@@ -105,9 +103,5 @@ void user_all_plan::refreshPlanList() {
                 this, &user_all_plan::handleChooseBtnClicked,
                 Qt::UniqueConnection);
     }
-}
-
-void user_all_plan::getPhoneToUserAllPlan(std::string& phone) {
-    user_all_plan::phone = phone;
 }
 

@@ -45,19 +45,19 @@ public:
     {
         if (admin_plan->objectName().isEmpty())
             admin_plan->setObjectName(QString::fromUtf8("admin_plan"));
-        admin_plan->resize(501, 394);
+        admin_plan->resize(500, 394);
         centralwidget = new QWidget(admin_plan);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         logo = new QLabel(centralwidget);
         logo->setObjectName(QString::fromUtf8("logo"));
-        logo->setGeometry(QRect(0, 0, 101, 51));
+        logo->setGeometry(QRect(0, 0, 181, 71));
         logo->setStyleSheet(QString::fromUtf8("border-image: url(:/logo.jpg);"));
         pushButton_back = new QPushButton(centralwidget);
         pushButton_back->setObjectName(QString::fromUtf8("pushButton_back"));
-        pushButton_back->setGeometry(QRect(320, 10, 70, 30));
+        pushButton_back->setGeometry(QRect(410, 20, 70, 30));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(5, 70, 40, 20));
+        label->setGeometry(QRect(10, 70, 40, 20));
         QFont font;
         font.setPointSize(10);
         label->setFont(font);
@@ -65,22 +65,22 @@ public:
 "color: rgb(255, 255, 255);"));
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(54, 70, 51, 20));
+        label_3->setGeometry(QRect(72, 70, 51, 20));
         label_3->setFont(font);
         label_3->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(119, 70, 61, 20));
+        label_4->setGeometry(QRect(135, 70, 61, 20));
         label_4->setFont(font);
         label_4->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(184, 70, 51, 20));
+        label_5->setGeometry(QRect(197, 70, 51, 20));
         label_5->setFont(font);
         label_5->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         pushButton_add = new QPushButton(centralwidget);
         pushButton_add->setObjectName(QString::fromUtf8("pushButton_add"));
-        pushButton_add->setGeometry(QRect(400, 10, 70, 30));
+        pushButton_add->setGeometry(QRect(320, 20, 70, 30));
         listWidget = new QListWidget(centralwidget);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
         listWidget->setGeometry(QRect(0, 90, 501, 271));
@@ -96,7 +96,7 @@ public:
         admin_plan->setCentralWidget(centralwidget);
         menubar = new QMenuBar(admin_plan);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 501, 17));
+        menubar->setGeometry(QRect(0, 0, 500, 17));
         menu = new QMenu(menubar);
         menu->setObjectName(QString::fromUtf8("menu"));
         admin_plan->setMenuBar(menubar);
@@ -120,7 +120,7 @@ public:
         label_3->setText(QCoreApplication::translate("admin_plan", "\350\265\204\350\264\271/\345\205\203", nullptr));
         label_4->setText(QCoreApplication::translate("admin_plan", "\351\200\232\350\257\235/\345\210\206", nullptr));
         label_5->setText(QCoreApplication::translate("admin_plan", "\346\265\201\351\207\217/MB", nullptr));
-        pushButton_add->setText(QCoreApplication::translate("admin_plan", "\345\242\236\345\212\240", nullptr));
+        pushButton_add->setText(QCoreApplication::translate("admin_plan", "\346\226\260\345\242\236", nullptr));
         label_6->setText(QCoreApplication::translate("admin_plan", "\345\256\275\345\270\246", nullptr));
         label_2->setText(QCoreApplication::translate("admin_plan", "\345\270\246\345\256\275/Mb", nullptr));
         menu->setTitle(QString());

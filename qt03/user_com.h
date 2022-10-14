@@ -20,13 +20,11 @@ protected:
 
 private slots:
     void on_pushButton_submit_clicked();
-    void getPhoneToUserComment(std::string& phone);
 
     void on_pushButton_submit_2_clicked();
 
 private:
     Ui::user_com *ui;
-    std::string phone;
     int getCheckBoxFraction();
 };
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>569</width>
-    <height>362</height>
+    <width>571</width>
+    <height>420</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>470</x>
-      <y>140</y>
+      <y>90</y>
       <width>80</width>
       <height>31</height>
      </rect>
@@ -56,7 +56,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>180</y>
+      <y>140</y>
       <width>51</width>
       <height>20</height>
      </rect>
@@ -66,7 +66,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>120</y>
+      <y>80</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -84,7 +84,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>180</y>
+      <y>140</y>
       <width>81</width>
       <height>21</height>
      </rect>
@@ -102,7 +102,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>150</y>
+      <y>110</y>
       <width>81</width>
       <height>21</height>
      </rect>
@@ -120,7 +120,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>150</y>
+      <y>110</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -138,7 +138,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>150</y>
+      <y>110</y>
       <width>51</width>
       <height>20</height>
      </rect>
@@ -148,7 +148,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>180</y>
+      <y>140</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -166,7 +166,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>180</y>
+      <y>140</y>
       <width>121</width>
       <height>21</height>
      </rect>
@@ -179,7 +179,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>120</y>
+      <y>80</y>
       <width>51</width>
       <height>20</height>
      </rect>
@@ -189,7 +189,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>120</y>
+      <y>80</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -207,7 +207,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>350</x>
-      <y>140</y>
+      <y>90</y>
       <width>80</width>
       <height>31</height>
      </rect>
@@ -245,9 +245,9 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>210</y>
+      <y>200</y>
       <width>571</width>
-      <height>111</height>
+      <height>181</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -274,7 +274,7 @@ QPushButton::pressed,QPushButton::checked{
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>-1</x>
+      <x>0</x>
       <y>0</y>
       <width>571</width>
       <height>211</height>
@@ -290,8 +290,8 @@ QPushButton::pressed,QPushButton::checked{
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>30</y>
+      <x>220</x>
+      <y>10</y>
       <width>461</width>
       <height>51</height>
      </rect>
@@ -302,7 +302,112 @@ QPushButton::pressed,QPushButton::checked{
      </font>
     </property>
     <property name="text">
-     <string>中国电信将会尽最大努力满足您的需求</string>
+     <string>我们将会尽最大努力满足您的需求</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>180</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>编号</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>268</x>
+      <y>180</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>流量/Mb</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>355</x>
+      <y>180</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>带宽/Mb</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>96</x>
+      <y>180</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>资费/元</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>182</x>
+      <y>180</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>通话/分</string>
     </property>
    </widget>
    <zorder>label_2</zorder>
@@ -321,13 +426,18 @@ QPushButton::pressed,QPushButton::checked{
    <zorder>listWidget</zorder>
    <zorder>label</zorder>
    <zorder>label_10</zorder>
+   <zorder>label_11</zorder>
+   <zorder>label_14</zorder>
+   <zorder>label_12</zorder>
+   <zorder>label_13</zorder>
+   <zorder>label_15</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>569</width>
+     <width>571</width>
      <height>17</height>
     </rect>
    </property>

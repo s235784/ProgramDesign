@@ -47,6 +47,7 @@ public:
         QFont font;
         font.setPointSize(9);
         admin_login->setFont(font);
+        admin_login->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(admin_login);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
@@ -55,37 +56,92 @@ public:
         QFont font1;
         font1.setPointSize(20);
         label->setFont(font1);
-        label->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        label->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 0, 0);"));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(190, 130, 201, 31));
+        label_2->setGeometry(QRect(170, 130, 201, 31));
         label_2->setFont(font1);
-        label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        label_2->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 0, 0);"));
         input_login = new QLineEdit(centralwidget);
         input_login->setObjectName(QString::fromUtf8("input_login"));
         input_login->setGeometry(QRect(181, 180, 131, 21));
         pushButton_login = new QPushButton(centralwidget);
         pushButton_login->setObjectName(QString::fromUtf8("pushButton_login"));
         pushButton_login->setGeometry(QRect(320, 180, 81, 21));
-        pushButton_login->setFont(font);
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221")});
+        font2.setPointSize(10);
+        font2.setBold(false);
+        font2.setItalic(false);
+        pushButton_login->setFont(font2);
+        pushButton_login->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+"    color: #2f3640;\n"
+"    background-color: #f5f6fa;\n"
+"    border-color: #2f3640;\n"
+"    border-radius: 12px;\n"
+"    border-style: solid;\n"
+"    border-width: 1px;\n"
+"    padding: 3px;\n"
+"}\n"
+"\n"
+"/**\351\274\240\346\240\207\345\201\234\347\225\231\345\234\250\346\214\211\351\222\256\344\270\212\347\232\204\346\240\267\345\274\217**/\n"
+"QPushButton::hover{	\n"
+"    color: #FFFFFF;\n"
+"    background-color: #718093;\n"
+"    border-color: #2f3640;\n"
+"}\n"
+"\n"
+"/**\351\274\240\346\240\207\346\214\211\345\216\213\344\270\213\345\216\273\347\232\204\346\240\267\345\274\217**/\n"
+"QPushButton::pressed,QPushButton::checked{\n"
+"    color: #FFFFFF;\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);\n"
+"}"));
         pushButton_back = new QPushButton(centralwidget);
         pushButton_back->setObjectName(QString::fromUtf8("pushButton_back"));
         pushButton_back->setGeometry(QRect(10, 230, 80, 21));
+        pushButton_back->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+"    color: #2f3640;\n"
+"    background-color: #f5f6fa;\n"
+"    border-color: #2f3640;\n"
+"    border-radius: 12px;\n"
+"    border-style: solid;\n"
+"    border-width: 1px;\n"
+"    padding: 3px;\n"
+"}\n"
+"\n"
+"/**\351\274\240\346\240\207\345\201\234\347\225\231\345\234\250\346\214\211\351\222\256\344\270\212\347\232\204\346\240\267\345\274\217**/\n"
+"QPushButton::hover{	\n"
+"    color: #FFFFFF;\n"
+"    background-color: #718093;\n"
+"    border-color: #2f3640;\n"
+"}\n"
+"\n"
+"/**\351\274\240\346\240\207\346\214\211\345\216\213\344\270\213\345\216\273\347\232\204\346\240\267\345\274\217**/\n"
+"QPushButton::pressed,QPushButton::checked{\n"
+"    color: #FFFFFF;\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);\n"
+"}"));
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(140, 180, 51, 20));
-        QFont font2;
-        font2.setPointSize(15);
-        label_4->setFont(font2);
-        label_4->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        label_4->setGeometry(QRect(140, 180, 31, 20));
+        QFont font3;
+        font3.setPointSize(10);
+        label_4->setFont(font3);
+        label_4->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 0, 0);"));
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(230, 60, 51, 51));
-        label_3->setStyleSheet(QString::fromUtf8("border-image: url(:/admin_logo.jpg);"));
+        label_3->setStyleSheet(QString::fromUtf8("border-image: url(:/admin_logo.jpg);\n"
+"background-color: rgb(255, 255, 255);"));
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(0, 0, 161, 81));
-        label_5->setStyleSheet(QString::fromUtf8("border-image: url(:/logo.jpg);"));
+        label_5->setStyleSheet(QString::fromUtf8("border-image: url(:/new_logo.png);"));
         admin_login->setCentralWidget(centralwidget);
         menubar = new QMenuBar(admin_login);
         menubar->setObjectName(QString::fromUtf8("menubar"));

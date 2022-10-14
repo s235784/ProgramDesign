@@ -4,6 +4,7 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 
+string phone;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -42,7 +43,7 @@ void MainWindow::on_pushButton_exit_clicked()
 //登陆键进入
 void MainWindow::on_pushButton_login_clicked()
 {
-    string phone = ui->input_phone->text().toStdString();
+    phone = ui->input_phone->text().toStdString();
     // 匹配手机号格式
     if (!matchPhone(phone)) {
         // 手机号格式不正确显示弹窗
@@ -53,7 +54,6 @@ void MainWindow::on_pushButton_login_clicked()
     }
     ui->input_phone->clear();
     userMain->show();
-    emit sendUserPhoneSignal(phone);
     this->hide();
 }
 

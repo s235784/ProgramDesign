@@ -11,16 +11,11 @@
 #include <QMessageBox>
 #include "admin_main.h"
 
-admin_main *adminMainUI;
-plan_add *addPlanUI;
-
 admin_plan::admin_plan(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::admin_plan)
 {
     ui->setupUi(this);
-    adminMainUI = new admin_main(this);
-    addPlanUI = new plan_add(this);
 }
 
 admin_plan::~admin_plan()
@@ -45,27 +40,27 @@ void admin_plan::paintEvent(QPaintEvent *event)
 
 void admin_plan::showEvent(QShowEvent* event) {
     refreshPlanList();
-    connect(this, SIGNAL(sendInitPlanEditSignal(int)),
-            addPlanUI, SLOT(getInitPlanEditSignal(int)),
-            Qt::UniqueConnection);
 }
 
 void admin_plan::on_pushButton_back_clicked() {
     // 返回上一个界面
-   adminMainUI =new admin_main;
+    admin_main *adminMainUI = new admin_main(this);
     adminMainUI->show();
     this->hide();
 }
 
 void admin_plan::handleEditBtnClicked() {
     // 点击编辑按钮
+    plan_add *addPlanUI = new plan_add(this);
+    connect(this, SIGNAL(sendInitPlanEditSignal(int)),
+            addPlanUI, SLOT(getInitPlanEditSignal(int)),
+            Qt::UniqueConnection);
+
     QPushButton* btn = (QPushButton*) sender();
     int id = btn->property("itemId").toInt();
     addPlanUI->show();
-    this->hide();
     // 传递ID参数
     emit sendInitPlanEditSignal(id);
-    addPlanUI->show();
     this->hide();
 }
 
@@ -84,6 +79,7 @@ void admin_plan::handleDelBtnClicked() {
 
 void admin_plan::on_pushButton_add_clicked() {
     // 添加套餐
+    plan_add *addPlanUI = new plan_add(this);
     addPlanUI->show();
     this->hide();
 }

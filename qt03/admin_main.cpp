@@ -47,7 +47,7 @@ void admin_main::on_pushButton_back_clicked()
 void admin_main::on_pushButton_plan_clicked()
 {
     // 跳转到套餐管理界面
-    planUI = new admin_plan(this);
+    admin_plan *planUI = new admin_plan(this);
     planUI->show();
     this->hide();
 }

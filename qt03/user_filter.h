@@ -22,11 +22,9 @@ protected:
 private slots:
     void on_pushButton_confirm_clicked();
     void on_pushButton_back_clicked();
-    void getPhoneToFilter(std::string& phone);
 
 private:
     Ui::user_filter *ui;
-    std::string phone;
     void handleChooseBtnClicked();
     void refreshPlanList(std::list<Plan>& planList);
 };

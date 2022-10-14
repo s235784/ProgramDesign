@@ -5,6 +5,8 @@
 #include "QMessageBox"
 #include "user_plan.h"
 
+extern string phone;
+
 user_plan *user_Pl;
 user_com::user_com(QWidget *parent) :
     QMainWindow(parent),
@@ -84,7 +86,8 @@ void user_com::on_pushButton_submit_clicked()
     }
     Comment comment = {0, phone, fraction, content};
     addComment(comment);
-    QMessageBox::information(this, "感谢", "谢谢您的评价与建议，我们后续会继续改进以更好地服务您.");
+    QMessageBox::information(this, "感谢", "谢谢您的评价与建议，我们后续会继续改进以更好地服务您。");
+    on_pushButton_submit_2_clicked();
 }
 
 int user_com::getCheckBoxFraction() {
@@ -102,16 +105,12 @@ int user_com::getCheckBoxFraction() {
     return fraction;
 }
 
-void user_com::getPhoneToUserComment(std::string& phone) {
-    user_com::phone = phone;
-}
-
 
 void user_com::on_pushButton_submit_2_clicked()
 {
     //返回上一个窗口
    user_Pl =new user_plan;
-    user_Pl->show();
-     this->hide();
+   user_Pl->show();
+   this->hide();
 }
 

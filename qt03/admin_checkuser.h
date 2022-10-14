@@ -16,6 +16,9 @@ public:
     explicit admin_checkuser(QWidget *parent = nullptr);
     ~admin_checkuser();
 
+protected:
+    void showEvent(QShowEvent* event);
+
 private slots:
     void on_pushButton_back_clicked();
      void paintEvent(QPaintEvent *event);

@@ -35,6 +35,8 @@ public:
     QLabel *label_fee;
     QPushButton *pushButton;
     QPushButton *pushButton_comm;
+    QLabel *label_5;
+    QLabel *label_6;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -42,7 +44,7 @@ public:
     {
         if (user_plan->objectName().isEmpty())
             user_plan->setObjectName(QString::fromUtf8("user_plan"));
-        user_plan->resize(466, 356);
+        user_plan->resize(466, 381);
         centralwidget = new QWidget(user_plan);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
@@ -53,45 +55,112 @@ public:
         label->setFont(font);
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(100, 170, 91, 31));
+        label_4->setGeometry(QRect(100, 210, 91, 31));
         QFont font1;
         font1.setPointSize(15);
         label_4->setFont(font1);
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(100, 70, 81, 31));
+        label_2->setGeometry(QRect(100, 110, 81, 31));
         label_2->setFont(font1);
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(100, 120, 91, 31));
+        label_3->setGeometry(QRect(100, 160, 91, 31));
         label_3->setFont(font1);
         label_duration = new QLabel(centralwidget);
         label_duration->setObjectName(QString::fromUtf8("label_duration"));
-        label_duration->setGeometry(QRect(310, 70, 81, 31));
+        label_duration->setGeometry(QRect(260, 110, 81, 31));
         label_duration->setFont(font1);
         label_traffic = new QLabel(centralwidget);
         label_traffic->setObjectName(QString::fromUtf8("label_traffic"));
-        label_traffic->setGeometry(QRect(310, 120, 81, 31));
+        label_traffic->setGeometry(QRect(260, 160, 81, 31));
         label_traffic->setFont(font1);
         label_7 = new QLabel(centralwidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(100, 220, 91, 31));
+        label_7->setGeometry(QRect(100, 260, 91, 31));
         label_7->setFont(font1);
         label_band = new QLabel(centralwidget);
         label_band->setObjectName(QString::fromUtf8("label_band"));
-        label_band->setGeometry(QRect(310, 170, 81, 31));
+        label_band->setGeometry(QRect(260, 210, 81, 31));
         label_band->setFont(font1);
         label_fee = new QLabel(centralwidget);
         label_fee->setObjectName(QString::fromUtf8("label_fee"));
-        label_fee->setGeometry(QRect(310, 220, 81, 31));
+        label_fee->setGeometry(QRect(260, 260, 111, 31));
         label_fee->setFont(font1);
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(120, 280, 80, 31));
+        pushButton->setGeometry(QRect(110, 310, 80, 31));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+"    color: #2f3640;\n"
+"    background-color: #f5f6fa;\n"
+"    border-color: #2f3640;\n"
+"    border-radius: 15px;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"/**\351\274\240\346\240\207\345\201\234\347\225\231\345\234\250\346\214\211\351\222\256\344\270\212\347\232\204\346\240\267\345\274\217**/\n"
+"QPushButton::hover{	\n"
+"    color: #FFFFFF;\n"
+"    background-color: #718093;\n"
+"    border-color: #2f3640;\n"
+"}\n"
+"\n"
+"/**\351\274\240\346\240\207\346\214\211\345\216\213\344\270\213\345\216\273\347\232\204\346\240\267\345\274\217**/\n"
+"QPushButton::pressed,QPushButton::checked{\n"
+"    color: #FFFFFF;\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);\n"
+"}"));
         pushButton_comm = new QPushButton(centralwidget);
         pushButton_comm->setObjectName(QString::fromUtf8("pushButton_comm"));
-        pushButton_comm->setGeometry(QRect(270, 280, 80, 31));
+        pushButton_comm->setGeometry(QRect(240, 310, 80, 31));
+        pushButton_comm->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	font: 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+"    color: #2f3640;\n"
+"    background-color: #f5f6fa;\n"
+"    border-color: #2f3640;\n"
+"    border-radius: 15px;\n"
+"    border-style: solid;\n"
+"    border-width: 2px;\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"/**\351\274\240\346\240\207\345\201\234\347\225\231\345\234\250\346\214\211\351\222\256\344\270\212\347\232\204\346\240\267\345\274\217**/\n"
+"QPushButton::hover{	\n"
+"    color: #FFFFFF;\n"
+"    background-color: #718093;\n"
+"    border-color: #2f3640;\n"
+"}\n"
+"\n"
+"/**\351\274\240\346\240\207\346\214\211\345\216\213\344\270\213\345\216\273\347\232\204\346\240\267\345\274\217**/\n"
+"QPushButton::pressed,QPushButton::checked{\n"
+"    color: #FFFFFF;\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #273c75, stop:1 #487eb0);\n"
+"}"));
+        label_5 = new QLabel(centralwidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(0, 10, 471, 331));
+        label_5->setStyleSheet(QString::fromUtf8("border-image: url(:/user_plan_new.png);"));
+        label_6 = new QLabel(centralwidget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(-10, 10, 91, 71));
+        label_6->setStyleSheet(QString::fromUtf8("border-image: url(:/logo_trans.png);"));
         user_plan->setCentralWidget(centralwidget);
+        label_5->raise();
+        label->raise();
+        label_4->raise();
+        label_2->raise();
+        label_3->raise();
+        label_duration->raise();
+        label_traffic->raise();
+        label_7->raise();
+        label_band->raise();
+        label_fee->raise();
+        pushButton->raise();
+        pushButton_comm->raise();
+        label_6->raise();
         menubar = new QMenuBar(user_plan);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 466, 17));
@@ -119,6 +188,8 @@ public:
         label_fee->setText(QCoreApplication::translate("user_plan", "\345\205\203", nullptr));
         pushButton->setText(QCoreApplication::translate("user_plan", "\347\241\256\350\256\244", nullptr));
         pushButton_comm->setText(QCoreApplication::translate("user_plan", "\350\257\204\344\273\267", nullptr));
+        label_5->setText(QString());
+        label_6->setText(QString());
     } // retranslateUi
 
 };

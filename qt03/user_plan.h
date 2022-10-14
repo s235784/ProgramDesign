@@ -17,10 +17,12 @@ public:
     explicit user_plan(QWidget *parent = nullptr);
     ~user_plan();
 
+protected:
+    void showEvent(QShowEvent* event);
+
 private slots:
     void on_pushButton_clicked();
     void on_pushButton_comm_clicked();
-    void getPhoneToUserPlan(std::string& phone);
 
 
 private:

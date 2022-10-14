@@ -7,14 +7,14 @@
 #include <QMessageBox>
 
 int planId = 0;
-admin_plan *ad_Plan;
-
+admin_plan *adminPlan;
 
 plan_add::plan_add(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::plan_add)
 {
     ui->setupUi(this);
+    adminPlan = new admin_plan();
 }
 
 plan_add::~plan_add()
@@ -24,7 +24,7 @@ plan_add::~plan_add()
 
 void plan_add::showEvent(QShowEvent* event) {
     // 设置输入框限制
-    QRegularExpressionValidator *pRevalidotor1=new QRegularExpressionValidator(QRegularExpression("[0-9]+$"),this);
+    QRegularExpressionValidator *pRevalidotor1=new QRegularExpressionValidator(QRegularExpression("(^[1-9](\\d+)?(\\.\\d{1,2})?$)|(^(0){1}$)|(^\\d\\.\\d{1,2}?$)"),this);
     ui->lineEdit_fee->setValidator(pRevalidotor1);
     QRegularExpressionValidator *pRevalidotor2=new QRegularExpressionValidator(QRegularExpression("[0-9]+$"),this);
     ui->lineEdit_traffic->setValidator(pRevalidotor2);
@@ -33,8 +33,7 @@ void plan_add::showEvent(QShowEvent* event) {
     QRegularExpressionValidator *pRevalidotor4=new QRegularExpressionValidator(QRegularExpression("[0-9]+$"),this);
     ui->lineEdit_band->setValidator(pRevalidotor4);
     // 绑定事件
-    admin_plan *planUI = new admin_plan(this);
-    connect(this, SIGNAL(sendRefreshPlanListSignal()), planUI, SLOT(getRefreshPlanListSignal()), Qt::UniqueConnection);
+    connect(this, SIGNAL(sendRefreshPlanListSignal()), adminPlan, SLOT(getRefreshPlanListSignal()), Qt::UniqueConnection);
 }
 
 void plan_add::on_pushButton_confirm_clicked()
@@ -80,8 +79,7 @@ void plan_add::on_pushButton_confirm_clicked()
 void plan_add::on_pushButton_back_clicked()
 {
     // 返回上一个界面
-    ad_Plan =new admin_plan;
-    ad_Plan->show();
+    adminPlan->show();
     this->hide();
 }
 

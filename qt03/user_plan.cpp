@@ -1,13 +1,13 @@
 #include "cmd/file.h"
 #include "cmd/util.h"
 #include "cmd/planStruct.h"
+#include "user_main.h"
 #include "user_plan.h"
 #include "ui_user_plan.h"
 #include <string>
 #include <QMessageBox>
-#include <user_main.h>
 
-
+extern string phone;
 
 user_plan::user_plan(QWidget *parent) :
     QMainWindow(parent),
@@ -21,28 +21,8 @@ user_plan::~user_plan()
     delete ui;
 }
 
-void user_plan::on_pushButton_clicked()
-{
-    // 返回上一个窗口
-    this->parentWidget()->show();
-    delete this;
-}
-
-void user_plan::on_pushButton_comm_clicked()
-{
-    com=new user_com(this);
-    com->show();
-    this->hide();
-}
-
-void user_plan::getPhoneToUserPlan(std::string& phone) {
+void user_plan::showEvent(QShowEvent* event) {
     Plan plan = getPlanByPhone(phone);
-    if (plan.id == 0) {
-        QMessageBox::warning(this, tr("提示"),
-                             tr("您还没有订购任何套餐，赶快去选一个吧。"),
-                             QMessageBox::Ok);
-
-    }
 
     string fee = getTwoPlacesDecimal(plan.fee);
     fee.append(" 元");
@@ -59,6 +39,21 @@ void user_plan::getPhoneToUserPlan(std::string& phone) {
     string band = to_string(plan.broadband);
     band.append(" Mb");
     ui->label_band->setText(QString::fromStdString(band));
+}
+
+void user_plan::on_pushButton_clicked()
+{
+    // 返回上一个窗口
+    user_main *userMainUI = new user_main(this);
+    userMainUI->show();
+    this->hide();
+}
+
+void user_plan::on_pushButton_comm_clicked()
+{
+    com=new user_com(this);
+    com->show();
+    this->hide();
 }
 
 

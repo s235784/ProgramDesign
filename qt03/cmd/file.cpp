@@ -263,7 +263,7 @@ void addWantedPlan(WantedPlan plan) {
 		if (!haveRepeat) {
 			plan.id = maxId + 1;
 			plan.times = 1;
-			content = getWantedPlanString(plan);
+            content.append(getWantedPlanString(plan));
 		}
 		writeFileTrunc(file_wanted_plan, content);
 	}
@@ -317,7 +317,7 @@ void addComment(Comment comment) {
             maxId = commentDisk.id > maxId ? commentDisk.id : maxId;
         }
         comment.id = maxId + 1;
-        content = getCommentString(comment);
+        content.append(getCommentString(comment));
         writeFileTrunc(file_comment, content);
     }
     else {

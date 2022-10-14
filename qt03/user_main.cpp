@@ -1,9 +1,12 @@
+#include "cmd/file.h"
 #include "user_main.h"
 #include "user_plan.h"
 #include "ui_user_main.h"
 #include <string>
 #include <QMessageBox>
 #include "mainwindow.h"
+
+extern string phone;
 
 MainWindow *user_Win;
 
@@ -21,27 +24,22 @@ user_main::~user_main()
     delete ui;
 }
 
-void user_main::showEvent(QShowEvent* event) {
-    // 绑定事件
-    connect(this, SIGNAL(sendPhoneToUserPlan(std::string&)),
-            userPlan, SLOT(getPhoneToUserPlan(std::string&)),
-            Qt::UniqueConnection);
-    connect(this, SIGNAL(sendPhoneToUserAllPlan(std::string&)),
-            userAllPlan, SLOT(getPhoneToUserAllPlan(std::string&)),
-            Qt::UniqueConnection);
-}
-
 void user_main::on_pushButton_userplan_clicked()
 {
     userAllPlan->show();
-    emit sendPhoneToUserAllPlan(phone);
     this->hide();
 }
 
 void user_main::on_pushButton_2_clicked()
 {
+    Plan plan = getPlanByPhone(phone);
+    if (plan.id == 0) {
+        QMessageBox::warning(this, tr("提示"),
+                             tr("您还没有订购任何套餐，赶快去选一个吧。"),
+                             QMessageBox::Ok);
+        return;
+    }
     userPlan->show();
-    emit sendPhoneToUserPlan(phone);
     this->hide();
 }
 
@@ -55,8 +53,9 @@ void user_main::on_pushButton_3_clicked()
 
 void user_main::getUserPhoneSignal(std::string& phone) {
     // 传递用户手机号
-    user_main::phone = phone;
+    //user_main::phone = phone;
 }
+
 //背景图片
 void user_main::paintEvent(QPaintEvent *event)
 {

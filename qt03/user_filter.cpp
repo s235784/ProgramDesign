@@ -11,6 +11,8 @@
 #include <QHBoxLayout>
 #include "user_all_plan.h"
 
+extern string phone;
+
 user_all_plan *user_All;
 user_filter::user_filter(QWidget *parent) :
     QMainWindow(parent),
@@ -101,10 +103,6 @@ void user_filter::handleChooseBtnClicked() {
     updateUserPlanByPhone(phone, id);
     QMessageBox::information(this, "提示", "恭喜，您已成功订购该套餐。",
                                        QMessageBox::Ok);
-}
-
-void user_filter::getPhoneToFilter(std::string& phone) {
-    user_filter::phone = phone;
 }
 
 void user_filter::refreshPlanList(list<Plan>& planList) {

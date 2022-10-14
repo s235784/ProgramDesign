@@ -27,17 +27,12 @@ protected:
 private slots:
     void on_pushButton_more_clicked();
     void on_pushButton_back_clicked();
-    void getPhoneToUserAllPlan(std::string& phone);
 
 private:
     Ui::user_all_plan *ui;
     user_filter *userFilterUI;
-    std::string phone;
     void refreshPlanList();
     void handleChooseBtnClicked();
-
-signals:
-    void sendPhoneToFilter(std::string& phone);
 };
 
 #endif // USER_ALL_PLAN_H

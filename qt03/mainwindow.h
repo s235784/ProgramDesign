@@ -46,10 +46,6 @@ private:
     user_main *userMain;
     QLineEdit *input_phone;
 
-signals:
-    void sendUserPhoneSignal(std::string& phone);
-    void sendPhoneToUserPlan(std::string& phone);
-
 };
 
 #endif // MAINWINDOW_H
