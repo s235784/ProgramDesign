@@ -69,7 +69,7 @@ void MainWindow::on_pushButton_admin_login_clicked()
 void MainWindow::paintEvent(QPaintEvent *event)
 {
     static int pos=0;
-    QString picture[1]={":/main_background2.jpg"};
+    QString picture[1]={":/welcom.png"};
     //对象
     QPainter* painter=new QPainter(this);
 

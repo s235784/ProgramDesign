@@ -36,8 +36,7 @@
     </property>
     <property name="styleSheet">
      <string notr="true">
-color: rgb(255, 255, 255);
-</string>
+color: rgb(0,0,0);</string>
     </property>
     <property name="text">
      <string> 欢迎</string>
@@ -59,8 +58,7 @@ color: rgb(255, 255, 255);
     </property>
     <property name="styleSheet">
      <string notr="true">
-color: rgb(255, 255, 255);
-</string>
+color: rgb(0,0,0);</string>
     </property>
     <property name="text">
      <string>尊敬的电信用户</string>
@@ -69,7 +67,7 @@ color: rgb(255, 255, 255);
    <widget class="QPushButton" name="pushButton_exit">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>220</x>
       <y>240</y>
       <width>71</width>
       <height>31</height>
@@ -183,7 +181,7 @@ QPushButton::pressed,QPushButton::checked{
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>10</x>
       <y>120</y>
       <width>191</width>
       <height>31</height>
@@ -191,7 +189,7 @@ QPushButton::pressed,QPushButton::checked{
     </property>
     <property name="styleSheet">
      <string notr="true">
-color: rgb(255, 255, 255);</string>
+color: rgb(0,0,0);</string>
     </property>
     <property name="text">
      <string>Made by NuoTian and Gary</string>
@@ -213,8 +211,7 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">
-color: rgb(255, 255, 255);
-</string>
+color: rgb(0,0,0);</string>
     </property>
     <property name="text">
      <string>手机号</string>
@@ -228,6 +225,22 @@ color: rgb(255, 255, 255);
       <width>151</width>
       <height>31</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>191</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/logo_trans.png);</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

@@ -7,18 +7,18 @@
     <x>0</x>
     <y>0</y>
     <width>526</width>
-    <height>475</height>
+    <height>378</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>用户评价</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton1">
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>210</y>
+      <y>100</y>
       <width>24</width>
       <height>24</height>
      </rect>
@@ -55,7 +55,7 @@ QPushButton::checked
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>210</y>
+      <y>100</y>
       <width>24</width>
       <height>24</height>
      </rect>
@@ -92,7 +92,7 @@ QPushButton::checked
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>210</y>
+      <y>100</y>
       <width>24</width>
       <height>24</height>
      </rect>
@@ -129,7 +129,7 @@ QPushButton::checked
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>210</y>
+      <y>100</y>
       <width>24</width>
       <height>24</height>
      </rect>
@@ -166,7 +166,7 @@ QPushButton::checked
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>210</y>
+      <y>100</y>
       <width>151</width>
       <height>24</height>
      </rect>
@@ -187,7 +187,7 @@ QPushButton::checked
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>210</y>
+      <y>100</y>
       <width>24</width>
       <height>24</height>
      </rect>
@@ -223,8 +223,8 @@ QPushButton::checked
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>160</y>
+      <x>130</x>
+      <y>40</y>
       <width>321</width>
       <height>51</height>
      </rect>
@@ -234,6 +234,10 @@ QPushButton::checked
       <pointsize>20</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+</string>
+    </property>
     <property name="text">
      <string>请对我们的服务进行评价</string>
     </property>
@@ -242,9 +246,9 @@ QPushButton::checked
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>260</y>
-      <width>361</width>
-      <height>111</height>
+      <y>150</y>
+      <width>311</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -254,8 +258,8 @@ QPushButton::checked
    <widget class="QPushButton" name="pushButton_submit">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>390</y>
+      <x>280</x>
+      <y>300</y>
       <width>80</width>
       <height>31</height>
      </rect>
@@ -293,7 +297,7 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>390</y>
+      <y>300</y>
       <width>80</width>
       <height>31</height>
      </rect>
@@ -330,10 +334,10 @@ QPushButton::pressed,QPushButton::checked{
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>-10</x>
+      <x>-30</x>
       <y>-10</y>
-      <width>181</width>
-      <height>111</height>
+      <width>191</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -347,9 +351,9 @@ QPushButton::pressed,QPushButton::checked{
     <property name="geometry">
      <rect>
       <x>-10</x>
-      <y>-50</y>
-      <width>531</width>
-      <height>501</height>
+      <y>-60</y>
+      <width>541</width>
+      <height>591</height>
      </rect>
     </property>
     <property name="styleSheet">

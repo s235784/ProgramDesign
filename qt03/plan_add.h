@@ -20,6 +20,7 @@ public:
 
 protected:
     void showEvent(QShowEvent* event);
+    void paintEvent(QPaintEvent *event);
 
 private slots:
     void on_pushButton_confirm_clicked();

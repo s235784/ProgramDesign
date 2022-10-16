@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>欢迎界面</string>
+   <string>用户主界面</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>

@@ -42,8 +42,8 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-color: rgb(255, 208, 88);</string>
+     <string notr="true">color: rgb(255, 255, 0);
+</string>
     </property>
     <property name="text">
      <string>找不到合适自己的套餐？</string>
@@ -64,8 +64,8 @@ color: rgb(255, 208, 88);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-color: rgb(255, 208, 88);</string>
+     <string notr="true">color: rgb(255, 255, 0);
+</string>
     </property>
     <property name="text">
      <string>中国电信推出了全新筛选功能，快来试试吧！</string>
@@ -399,7 +399,7 @@ border-image: url(:/logo_trans.png);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">
-color: rgb(255, 208, 88);</string>
+color: rgb(255, 255, 0);</string>
     </property>
     <property name="text">
      <string>以下是为您精选的套餐</string>

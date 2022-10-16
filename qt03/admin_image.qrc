@@ -29,5 +29,6 @@
         <file>user_plan_new.png</file>
         <file>user_com.png</file>
         <file>user_comm.png</file>
+        <file>welcom.png</file>
     </qresource>
 </RCC>

@@ -93,3 +93,18 @@ void plan_add::getInitPlanEditSignal(int id) {
     ui->lineEdit_band->setText(QString::number(plan.broadband));
 }
 
+void plan_add::paintEvent(QPaintEvent *event)
+{
+    static int pos=0;
+    QString picture[1]={":/background.jpg"};
+    //对象
+    QPainter* painter=new QPainter(this);
+
+    //画图
+    QPixmap pixmap;
+
+    pixmap.load(picture[pos]);
+    pixmap.scaled(472,70);
+    painter->drawPixmap(0,0,472,70,pixmap);
+}
+
