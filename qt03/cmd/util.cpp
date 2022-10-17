@@ -15,6 +15,11 @@
 
 using namespace std;
 
+/**
+ * @brief getPlanString 获取Plan结构体的字符串数据
+ * @param plan 结构体
+ * @return 字符串数据
+ */
 string getPlanString(Plan plan) {
     string content = "";
     content.append(to_string(plan.id));
@@ -30,6 +35,11 @@ string getPlanString(Plan plan) {
     return content;
 }
 
+/**
+ * @brief getWantedPlanString 获取WantedPlan结构体的字符串数据
+ * @param plan 结构体
+ * @return 字符串数据
+ */
 string getWantedPlanString(WantedPlan plan) {
     string content = "";
     content.append(to_string(plan.id));
@@ -45,6 +55,11 @@ string getWantedPlanString(WantedPlan plan) {
     return content;
 }
 
+/**
+ * @brief getUserPlanString 获取UserPlan结构体的字符串数据
+ * @param userPlan 结构体
+ * @return 字符串数据
+ */
 string getUserPlanString(UserPlan userPlan) {
     string content = "";
     content.append(userPlan.phone);
@@ -54,6 +69,11 @@ string getUserPlanString(UserPlan userPlan) {
     return content;
 }
 
+/**
+ * @brief getCommentString 获取Comment结构体的字符串数据
+ * @param comment 结构体
+ * @return 字符串数据
+ */
 string getCommentString(Comment comment) {
     string content = "";
     content.append(to_string(comment.id));
@@ -67,6 +87,15 @@ string getCommentString(Comment comment) {
     return content;
 }
 
+/**
+ * @brief comparePlan 比较两个Plan是否内容相等
+ * @param a Plan A
+ * @param b Plan B
+ * @return 相等True
+ *
+ * 将不会判断两个Plan的ID是否相等
+ * 仅对其他参数进行判断
+ */
 bool comparePlan(Plan a, Plan b) {
     if (a.fee != b.fee)
         return false;
@@ -79,6 +108,12 @@ bool comparePlan(Plan a, Plan b) {
     return true;
 }
 
+/**
+ * @brief compareWantedPlan 比较两个WantedPlan是否内容相等
+ * @param a WantedPlan A
+ * @param b WantedPlan B
+ * @return boolen
+ */
 bool compareWantedPlan(WantedPlan a, WantedPlan b) {
     if (a.duration != b.duration)
         return false;
@@ -89,6 +124,12 @@ bool compareWantedPlan(WantedPlan a, WantedPlan b) {
     return true;
 }
 
+/**
+ * @brief splitString 通过指定内容截取字符串
+ * @param str 要截取的字符串
+ * @param deli 截取的依据
+ * @return 截取后的列表
+ */
 list<string> splitString(string str, string deli = " ") {
     list<string> result;
     size_t start = 0;
@@ -102,24 +143,12 @@ list<string> splitString(string str, string deli = " ") {
     return result;
 }
 
-int getDecimalPlaces(float num) {
-    num = num - (int) num;
-    if (abs(num) <= 1e-6) {
-        return 0;
-    }
-    for (int i = 0; i < 10; i++) {
-        num *= 10;
-        if (num - (int) num == 0) {
-            return i + 1;
-        }
-    }
-}
-
-/*
-* 生成一个具有随机数的列表（从1开始）
-* maxNum 列表中最大的数
-* count 列表中数据的个数
-*/
+/**
+ * @brief getRandIntList 生成一个具有随机数的列表（从1开始）
+ * @param maxNum 列表中最大的数
+ * @param count 列表中数据的个数
+ * @return 随机数列表
+ */
 list<int> getRandIntList(int maxNum, int count) {
 
     list<int> result;
@@ -142,6 +171,11 @@ list<int> getRandIntList(int maxNum, int count) {
     return result;
 }
 
+/**
+ * @brief matchPhone 正则匹配手机号格式
+ * @param phone 要匹配的手机号
+ * @return boolen
+ */
 bool matchPhone(string phone) {
     regex reg("^[1][3,4,5,7,8][0-9]{9}$");
     return regex_match(phone.data(), reg);

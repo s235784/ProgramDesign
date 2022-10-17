@@ -17,20 +17,27 @@ string readFile(string& file);
 void writeFileTrunc(string& file, string& content);
 void writeFileApp(string& file, string& content);
 
-string file_properties = "config.txt";
-string file_plan = "plan.txt";
-string file_user_plan = "userPlan.txt";
-string file_wanted_plan = "wantedPlan.txt";
-string file_comment = "comment.txt";
+string file_properties = "config.txt"; // 配置文件名
+string file_plan = "plan.txt"; // 套餐文件名
+string file_user_plan = "userPlan.txt"; // 用户套餐文件名
+string file_wanted_plan = "wantedPlan.txt"; // 用户意向套餐文件名
+string file_comment = "comment.txt"; // 评论文件名
 
+/**
+ * @brief initProperties 初始化配置文件
+ */
 void initProperties() {
 	if (!ifstream{ file_properties }) {
 		ofstream outfile(file_properties.data(), ios::trunc);
-		outfile << "admin_password=1234";
+        outfile << "admin_password=1234"; // 写入默认管理员密码
 		outfile.close();
 	}
 }
 
+/**
+ * @brief getAdminPassword 获取管理员密码
+ * @return 管理员密码
+ */
 string getAdminPassword() {
 	string result = "1234";
 	string fileContent = readFile(file_properties);
@@ -51,6 +58,11 @@ string getAdminPassword() {
 	return result;
 }
 
+/**
+ * @brief isExistPlan 判断套餐是否已存在
+ * @param planNew 要添加的新套餐
+ * @return boolen
+ */
 bool isExistPlan(Plan planNew) {
 	list<Plan> planListDisk = readPlanList();
 	if (!planListDisk.empty()) {
@@ -63,6 +75,11 @@ bool isExistPlan(Plan planNew) {
 	return false;
 }
 
+/**
+ * @brief isExistPlanById 通过ID判断套餐是否存在
+ * @param id 套餐ID
+ * @return boolen
+ */
 bool isExistPlanById(int id) {
 	list<Plan> planListDisk = readPlanList();
 	if (!planListDisk.empty()) {
@@ -75,6 +92,10 @@ bool isExistPlanById(int id) {
 	return false;
 }
 
+/**
+ * @brief addPlan 添加新套餐
+ * @param planNew 新套餐
+ */
 void addPlan(Plan planNew) {
 	list<Plan> planListDisk = readPlanList();
 	if (!planListDisk.empty()) {
@@ -99,6 +120,10 @@ void addPlan(Plan planNew) {
 	}
 }
 
+/**
+ * @brief updatePlan 更新套餐
+ * @param plan 更新后的套餐内容（需要指定ID）
+ */
 void updatePlan(Plan plan) {
 	list<Plan> planListDisk = readPlanList();
 	string content;
@@ -113,6 +138,10 @@ void updatePlan(Plan plan) {
 	}
 }
 
+/**
+ * @brief deletePlan 删除套餐
+ * @param id 套餐ID
+ */
 void deletePlan(int id) {
 	list<Plan> planListDisk = readPlanList();
 	string content;
@@ -126,6 +155,10 @@ void deletePlan(int id) {
 	}
 }
 
+/**
+ * @brief readPlanList 获取套餐的列表
+ * @return list
+ */
 list<Plan> readPlanList() {
 	list<Plan> planList;
 	string fileDisk = readFile(file_plan);
@@ -157,6 +190,11 @@ list<Plan> readPlanList() {
 	return planList;
 }
 
+/**
+ * @brief getPlanById 通过ID获取套餐
+ * @param id 套餐ID
+ * @return Plan 套餐
+ */
 Plan getPlanById(int id) {
 	list<Plan> planListDisk = readPlanList();
 	for (auto& plan : planListDisk) {
@@ -167,6 +205,11 @@ Plan getPlanById(int id) {
     return {0, 0, 0, 0, 0};
 }
 
+/**
+ * @brief isExistUserPlan 判断用户是否已选择套餐
+ * @param phone 用户手机号
+ * @return boolen
+ */
 bool isExistUserPlan(string& phone) {
 	list<UserPlan> userPlanList = readUserPlanList();
 	for (const auto& userPlan : userPlanList) {
@@ -176,6 +219,11 @@ bool isExistUserPlan(string& phone) {
 	return false;
 }
 
+/**
+ * @brief getPlanByPhone 通过用户手机号获取套餐
+ * @param phone 用户手机号
+ * @return Plan
+ */
 Plan getPlanByPhone(string& phone) {
 	list<UserPlan> userPlanList = readUserPlanList();
     int id = 0;
@@ -188,6 +236,11 @@ Plan getPlanByPhone(string& phone) {
 	return getPlanById(id);
 }
 
+/**
+ * @brief updateUserPlanByPhone 通过用户手机号更新用户套餐
+ * @param phone 用户手机号
+ * @param id 更新后的套餐ID
+ */
 void updateUserPlanByPhone(string& phone, int id) {
 	string content;
 	list<UserPlan> userPlanList = readUserPlanList();
@@ -212,6 +265,10 @@ void updateUserPlanByPhone(string& phone, int id) {
 	writeFileTrunc(file_user_plan, content);
 }
 
+/**
+ * @brief readUserPlanList 获取用户套餐的列表
+ * @return 包含所有用户及其套餐内容的列表
+ */
 list<UserPlan> readUserPlanList() {
 	list<UserPlan> userPlanList;
 	string fileDisk = readFile(file_user_plan);
@@ -237,10 +294,11 @@ list<UserPlan> readUserPlanList() {
 	return userPlanList;
 }
 
-/*
-* 添加一个意向套餐
-* 对于已添加的套餐次数会自动+1
-*/
+/**
+ * @brief addWantedPlan 添加一个意向套餐
+ * @param plan 意向套餐的内容
+ * 对于已存在相同意向套餐的情况，该套餐的次数会自动+1
+ */
 void addWantedPlan(WantedPlan plan) {
 	list<WantedPlan> planListDisk = readWantedPlanList();
 	list<WantedPlan> planListNew;
@@ -250,6 +308,7 @@ void addWantedPlan(WantedPlan plan) {
 		bool haveRepeat = false;
 		for (const auto& planDisk : planListDisk) {
 			if (compareWantedPlan(planDisk, plan)) {
+                          // 已有该意向套餐
 				haveRepeat = true;
 				plan.id = planDisk.id;
 				plan.times = planDisk.times + 1;
@@ -260,7 +319,7 @@ void addWantedPlan(WantedPlan plan) {
 			}
 			maxId = planDisk.id > maxId ? planDisk.id : maxId;
 		}
-		if (!haveRepeat) {
+        if (!haveRepeat) { // 没有该意向套餐
 			plan.id = maxId + 1;
 			plan.times = 1;
             content.append(getWantedPlanString(plan));
@@ -275,6 +334,10 @@ void addWantedPlan(WantedPlan plan) {
 	}
 }
 
+/**
+ * @brief readWantedPlanList 获取用户意向套餐列表
+ * @return 用户意向套餐列表
+ */
 list<WantedPlan> readWantedPlanList() {
 	list<WantedPlan> wantedPlanList;
 	string fileDisk = readFile(file_wanted_plan);
@@ -306,6 +369,10 @@ list<WantedPlan> readWantedPlanList() {
 	return wantedPlanList;
 }
 
+/**
+ * @brief addComment 添加一条评论
+ * @param comment 评论结构体
+ */
 void addComment(Comment comment) {
     list<Comment> commentListDisk = readCommentList();
     list<Comment> commentListNew;
@@ -327,6 +394,10 @@ void addComment(Comment comment) {
     }
 }
 
+/**
+ * @brief readCommentList 获取所有评论
+ * @return 所有评论的列表
+ */
 list<Comment> readCommentList() {
     list<Comment> commentList;
     string fileDisk = readFile(file_comment);
@@ -356,6 +427,11 @@ list<Comment> readCommentList() {
     return commentList;
 }
 
+/**
+ * @brief readFile 读取一个文件
+ * @param file string类型的文件名
+ * @return 文件内容
+ */
 string readFile(string& file) {
 	string fileContent;
 	ifstream infile(file.data());
@@ -369,12 +445,22 @@ string readFile(string& file) {
 	return fileContent;
 }
 
+/**
+ * @brief writeFileTrunc 通过覆盖的方式写入文件内容
+ * @param file 要写入的文件名
+ * @param content 要写入的文件内容
+ */
 void writeFileTrunc(string& file, string& content) {
 	ofstream outfile(file.data(), ios::trunc);
 	outfile << content.data();
 	outfile.close();
 }
 
+/**
+ * @brief writeFileApp 通过追加的方式写入文件内容
+ * @param file 要写入的文件名
+ * @param content 要写入的文件内容
+ */
 void writeFileApp(string& file, string& content) {
 	ofstream outfile(file.data(), ios::app);
 	outfile << content.data();

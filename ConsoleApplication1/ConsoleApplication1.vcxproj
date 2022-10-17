@@ -133,6 +133,7 @@
     <ClCompile Include="planManage.cpp" />
     <ClCompile Include="user.cpp" />
     <ClCompile Include="util.cpp" />
+    <ClCompile Include="源.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="admin.h" />

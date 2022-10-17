@@ -4,6 +4,8 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 .idea/
+build-qt03-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/
+build-qt03-Desktop_Qt_6_2_4_MinGW_64_bit-Release/
 
 # User-specific files
 *.rsuser

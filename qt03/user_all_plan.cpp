@@ -48,7 +48,6 @@ void user_all_plan::on_pushButton_back_clicked()
 
 void user_all_plan::handleChooseBtnClicked() {
     // 点击订购按钮
-
     QPushButton* btn = (QPushButton*) sender();
     int id = btn->property("itemId").toInt();
     updateUserPlanByPhone(phone, id);
