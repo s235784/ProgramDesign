@@ -16,12 +16,12 @@ void showUserWantedPlan();
 string getPassword();
 
 void checkAdminPasswd() {
-	cout << "ÇëÊäÈë¹ÜÀíÔ±ÃÜÂë£º";
+	cout << "è¯·è¾“å…¥ç®¡ç†å‘˜å¯†ç ï¼š";
 	do {
 		string passwdInput = getPassword();
 		string passwd = getAdminPassword();
 		if (passwd != passwdInput) {
-			cout << "ÃÜÂë´íÎó£¬ÇëÖØÐÂÊäÈë£º";
+			cout << "å¯†ç é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼š";
 		}
 		else {
 			break;
@@ -36,11 +36,11 @@ void showPlanMenu() {
 	bool continueShow = false;
 	do {
 		int choice;
-		cout << "1. Ì×²Í¹ÜÀí" << endl;
-		cout << "2. ËùÓÐÓÃ»§Ì×²Í" << endl;
-		cout << "3. ÓÃ»§ÒâÏòÌ×²Í" << endl;
-		cout << "0. ÍË³öµÇÂ¼" << endl;
-		cout << "ÇëÊäÈë²Ù×÷Ç°µÄÐòºÅ£º";
+		cout << "1. å¥—é¤ç®¡ç†" << endl;
+		cout << "2. æ‰€æœ‰ç”¨æˆ·å¥—é¤" << endl;
+		cout << "3. ç”¨æˆ·æ„å‘å¥—é¤" << endl;
+		cout << "0. é€€å‡ºç™»å½•" << endl;
+		cout << "è¯·è¾“å…¥æ“ä½œå‰çš„åºå·ï¼š";
 		cin >> choice;
 		switch (choice) {
 		case 1:
@@ -62,13 +62,13 @@ void showPlanMenu() {
 			continueShow = false;
 			break;
 		default:
-			cout << "ÄúÊäÈëµÄÐòºÅÓÐÎó£¬ÇëÖØÐÂÊäÈë¡£" << endl;
+			cout << "æ‚¨è¾“å…¥çš„åºå·æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚" << endl;
 			continueShow = true;
 		}
 	} while (continueShow);
 }
 
-// ÒÑÖªÎÊÌâ£ºÊäÈë·½Ïò¼üÊ±Ò²»á´¥·¢
+// å·²çŸ¥é—®é¢˜ï¼šè¾“å…¥æ–¹å‘é”®æ—¶ä¹Ÿä¼šè§¦å‘
 string getPassword() {
 	string str = "";
 	char init = '\0';

@@ -3,10 +3,10 @@
 using namespace std;
 
 struct UserPlanVO {
-	string phone;		// ÊÖ»úºÅ
-	int id;					// ±àºÅ
-	float fee;				// ·ÑÓÃ
-	int duration;		// Í¨»°Ê±³¤ µ¥Î»·ÖÖÓ
-	int traffic;			// Á÷Á¿ µ¥Î»MByte
-	int broadband;	// ¿í´ø µ¥Î»Mbits
+	string phone;		// æ‰‹æœºå·
+	int id;					// ç¼–å·
+	float fee;				// è´¹ç”¨
+	int duration;		// é€šè¯æ—¶é•¿ å•ä½åˆ†é’Ÿ
+	int traffic;			// æµé‡ å•ä½MByte
+	int broadband;	// å®½å¸¦ å•ä½Mbits
 };

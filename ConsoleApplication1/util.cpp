@@ -102,11 +102,11 @@ int getDecimalPlaces(float num) {
 void showPlanList(list<Plan>& planList) {
 	cout << "------------------------------------" << endl;
 	cout << setiosflags(ios::left)
-		<< setw(12) << "±àºÅ"
-		<< setw(12) << "×Ê·Ñ£¨Ôª£©"
-		<< setw(19) << "Í¨»°Ê±³¤£¨·ÖÖÓ£©"
-		<< setw(12) << "Á÷Á¿£¨MB£©"
-		<< setw(12) << "¿í´ø£¨Mb£©"
+		<< setw(12) << "ç¼–å·"
+		<< setw(12) << "èµ„è´¹ï¼ˆå…ƒï¼‰"
+		<< setw(19) << "é€šè¯æ—¶é•¿ï¼ˆåˆ†é’Ÿï¼‰"
+		<< setw(12) << "æµé‡ï¼ˆMBï¼‰"
+		<< setw(12) << "å®½å¸¦ï¼ˆMbï¼‰"
 		<< endl;
 	cout << "------------------------------------" << endl;
 	for (const auto& plan : planList) {
@@ -124,12 +124,12 @@ void showPlanList(list<Plan>& planList) {
 void showUserPlanList(list<UserPlanVO>& planList) {
 	cout << "------------------------------------" << endl;
 	cout << setiosflags(ios::left)
-		<< setw(16) << "ÊÖ»úºÅ"
-		<< setw(12) << "Ì×²Í±àºÅ"
-		<< setw(12) << "×Ê·Ñ£¨Ôª£©"
-		<< setw(19) << "Í¨»°Ê±³¤£¨·ÖÖÓ£©"
-		<< setw(12) << "Á÷Á¿£¨MB£©"
-		<< setw(12) << "¿í´ø£¨Mb£©"
+		<< setw(16) << "æ‰‹æœºå·"
+		<< setw(12) << "å¥—é¤ç¼–å·"
+		<< setw(12) << "èµ„è´¹ï¼ˆå…ƒï¼‰"
+		<< setw(19) << "é€šè¯æ—¶é•¿ï¼ˆåˆ†é’Ÿï¼‰"
+		<< setw(12) << "æµé‡ï¼ˆMBï¼‰"
+		<< setw(12) << "å®½å¸¦ï¼ˆMbï¼‰"
 		<< endl;
 	cout << "------------------------------------" << endl;
 	for (const auto& plan : planList) {
@@ -148,11 +148,11 @@ void showUserPlanList(list<UserPlanVO>& planList) {
 void showWantedPlanList(list<WantedPlan>& planList) {
 	cout << "------------------------------------" << endl;
 	cout << setiosflags(ios::left)
-		<< setw(12) << "±àºÅ"
-		<< setw(19) << "Í¨»°Ê±³¤£¨·ÖÖÓ£©"
-		<< setw(12) << "Á÷Á¿£¨MB£©"
-		<< setw(12) << "¿í´ø£¨Mb£©"
-		<< setw(12) << "´ÎÊı"
+		<< setw(12) << "ç¼–å·"
+		<< setw(19) << "é€šè¯æ—¶é•¿ï¼ˆåˆ†é’Ÿï¼‰"
+		<< setw(12) << "æµé‡ï¼ˆMBï¼‰"
+		<< setw(12) << "å®½å¸¦ï¼ˆMbï¼‰"
+		<< setw(12) << "æ¬¡æ•°"
 		<< endl;
 	cout << "------------------------------------" << endl;
 	for (const auto& plan : planList) {
@@ -168,9 +168,9 @@ void showWantedPlanList(list<WantedPlan>& planList) {
 }
 
 /*
-* Éú³ÉÒ»¸ö¾ßÓĞËæ»úÊıµÄÁĞ±í£¨´Ó1¿ªÊ¼£©
-* maxNum ÁĞ±íÖĞ×î´óµÄÊı
-* count ÁĞ±íÖĞÊı¾İµÄ¸öÊı
+* ç”Ÿæˆä¸€ä¸ªå…·æœ‰éšæœºæ•°çš„åˆ—è¡¨ï¼ˆä»1å¼€å§‹ï¼‰
+* maxNum åˆ—è¡¨ä¸­æœ€å¤§çš„æ•°
+* count åˆ—è¡¨ä¸­æ•°æ®çš„ä¸ªæ•°
 */
 list<int> getRandIntList(int maxNum, int count) {
 	list<int> result;

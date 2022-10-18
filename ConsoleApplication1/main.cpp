@@ -1,4 +1,4 @@
-﻿#include "file.h"
+#include "file.h"
 #include "util.h"
 #include "user.h"
 #include "admin.h"

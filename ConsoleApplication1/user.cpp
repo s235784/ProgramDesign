@@ -14,13 +14,13 @@ void changeMyPlan(string& phone);
 void showPhoneInput() {
 	string phone;
 	do {
-		cout << "ÇëÊäÈëÄúµÄÊÖ»úºÅ£º";
+		cout << "è¯·è¾“å…¥æ‚¨çš„æ‰‹æœºå·ï¼š";
 		cin >> phone;
 		if (matchPhone(phone)) {
 			break;
 		}
 		else {
-			cout << "¸ñÊ½ÓÐÎó£¬ÇëÖØÐÂÊäÈë¡£" << endl;
+			cout << "æ ¼å¼æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚" << endl;
 		}
 	} while (true);
 
@@ -32,12 +32,12 @@ void userMenu(string& phone) {
 	bool continueShow = false;
 	do {
 		int choice;
-		cout << "1. Ì×²ÍÍÆ¼ö" << endl;
-		cout << "2. ÏÔÊ¾ËùÓÐÌ×²Í" << endl;
-		cout << "3. ²éÑ¯¸öÈËÌ×²Í" << endl;
-		cout << "4. ±ä¸üÌ×²Í" << endl;
-		cout << "0. ·µ»ØÉÏÒ»¼¶" << endl;
-		cout << "ÇëÊäÈë²Ù×÷Ç°µÄÐòºÅ£º";
+		cout << "1. å¥—é¤æŽ¨è" << endl;
+		cout << "2. æ˜¾ç¤ºæ‰€æœ‰å¥—é¤" << endl;
+		cout << "3. æŸ¥è¯¢ä¸ªäººå¥—é¤" << endl;
+		cout << "4. å˜æ›´å¥—é¤" << endl;
+		cout << "0. è¿”å›žä¸Šä¸€çº§" << endl;
+		cout << "è¯·è¾“å…¥æ“ä½œå‰çš„åºå·ï¼š";
 		cin >> choice;
 		switch (choice) {
 		case 1:
@@ -64,7 +64,7 @@ void userMenu(string& phone) {
 			continueShow = false;
 			break;
 		default:
-			cout << "ÄúÊäÈëµÄÐòºÅÓÐÎó£¬ÇëÖØÐÂÊäÈë¡£" << endl;
+			cout << "æ‚¨è¾“å…¥çš„åºå·æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚" << endl;
 			continueShow = true;
 		}
 	} while (continueShow);
@@ -72,12 +72,12 @@ void userMenu(string& phone) {
 
 void recommendPlan() {
 	int duration, traffic, broadband;
-	cout << "ÄúÊäÈëÄúÏëÒªµÄÌ×²ÍÄÚÈÝ" << endl;
-	cout << "Í¨»°Ê±³¤£¨·ÖÖÓ£©£º";
+	cout << "æ‚¨è¾“å…¥æ‚¨æƒ³è¦çš„å¥—é¤å†…å®¹" << endl;
+	cout << "é€šè¯æ—¶é•¿ï¼ˆåˆ†é’Ÿï¼‰ï¼š";
 	cin >> duration;
-	cout << "Á÷Á¿£¨MB£©£º";
+	cout << "æµé‡ï¼ˆMBï¼‰ï¼š";
 	cin >> traffic;
-	cout << "¿í´ø£¨Mb£©£º";
+	cout << "å®½å¸¦ï¼ˆMbï¼‰ï¼š";
 	cin >> broadband;
 
 	list<Plan> recommend;
@@ -95,11 +95,11 @@ void recommendPlan() {
 		recommend.push_back(plan);
 	}
 	if (recommend.empty()) {
-		cout << "±§Ç¸ÕâÀïÃ»ÓÐÄãÏëÒªµÄÌ×²Í£¬ÊÔÒ»ÏÂÕâÐ©ÄØ£º" << endl;
-		// ÏòÒâÏòÌ×²ÍÖÐÌí¼ÓÊý¾Ý
+		cout << "æŠ±æ­‰è¿™é‡Œæ²¡æœ‰ä½ æƒ³è¦çš„å¥—é¤ï¼Œè¯•ä¸€ä¸‹è¿™äº›å‘¢ï¼š" << endl;
+		// å‘æ„å‘å¥—é¤ä¸­æ·»åŠ æ•°æ®
 		WantedPlan plan = {0, duration, traffic, broadband, 0};
 		addWantedPlan(plan);
-		// »ñÈ¡Ëæ»úÍÆ¼ö
+		// èŽ·å–éšæœºæŽ¨è
 		list<int> indexList = getRandIntList((int) planList.size(), 3);
 		for (int i : indexList) {
 			int index = 1;
@@ -111,7 +111,7 @@ void recommendPlan() {
 		}
 	}
 	else {
-		cout << "ÎÒÃÇÕÒµ½ÁËÏÂÃæµÄÍÆ¼öÌ×²Í£º" << endl;
+		cout << "æˆ‘ä»¬æ‰¾åˆ°äº†ä¸‹é¢çš„æŽ¨èå¥—é¤ï¼š" << endl;
 	}
 
 	showPlanList(recommend);
@@ -124,7 +124,7 @@ void showAllPlanUser() {
 
 void showMyPlan(string& phone) {
 	if (!isExistUserPlan(phone)) {
-		cout << "Äú»¹Ã»ÓÐÑ¡ÔñÈÎºÎÌ×²Í¡£" << endl;
+		cout << "æ‚¨è¿˜æ²¡æœ‰é€‰æ‹©ä»»ä½•å¥—é¤ã€‚" << endl;
 	}
 	else {
 		Plan plan = getPlanByPhone(phone);
@@ -134,15 +134,15 @@ void showMyPlan(string& phone) {
 }
 
 void changeMyPlan(string& phone) {
-	cout << "¿ÉÑ¡Ì×²Í£º" << endl;
+	cout << "å¯é€‰å¥—é¤ï¼š" << endl;
 	showAllPlanUser();
-	cout << "ÇëÊäÈëÄúÒª±ä¸üµÄÌ×²ÍÇ°µÄÐòºÅ£º";
+	cout << "è¯·è¾“å…¥æ‚¨è¦å˜æ›´çš„å¥—é¤å‰çš„åºå·ï¼š";
 	int id;
 	cin >> id;
 	if (!isExistPlanById(id)) {
-		cout << "ÄúÊäÈëµÄÐòºÅ²»´æÔÚ£¬ÎÞ·¨ÐÞ¸Ä" << endl;
+		cout << "æ‚¨è¾“å…¥çš„åºå·ä¸å­˜åœ¨ï¼Œæ— æ³•ä¿®æ”¹" << endl;
 		return;
 	}
 	updateUserPlanByPhone(phone, id);
-	cout << "ÒÑÍê³É¡£" << endl;
+	cout << "å·²å®Œæˆã€‚" << endl;
 }
