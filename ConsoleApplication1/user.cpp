@@ -1,8 +1,8 @@
-#include "file.h"
-#include "util.h"
-#include "planStruct.h"
-#include <list>
 #include <iostream>
+#include <list>
+#include "file.h"
+#include "planStruct.h"
+#include "util.h"
 using namespace std;
 
 void userMenu(string& phone);
@@ -12,137 +12,131 @@ void showMyPlan(string& phone);
 void changeMyPlan(string& phone);
 
 void showPhoneInput() {
-	string phone;
-	do {
-		cout << "ÇëÊäÈëÄúµÄÊÖ»úºÅ£º";
-		cin >> phone;
-		if (matchPhone(phone)) {
-			break;
-		}
-		else {
-			cout << "¸ñÊ½ÓÐÎó£¬ÇëÖØÐÂÊäÈë¡£" << endl;
-		}
-	} while (true);
+    string phone;
+    do {
+        cout << "è¯·è¾“å…¥æ‚¨çš„æ‰‹æœºå·ï¼š";
+        cin >> phone;
+        if (matchPhone(phone)) {
+            break;
+        } else {
+            cout << "æ ¼å¼æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚" << endl;
+        }
+    } while (true);
 
-	system("cls");
-	userMenu(phone);
+    system("cls");
+    userMenu(phone);
 }
 
 void userMenu(string& phone) {
-	bool continueShow = false;
-	do {
-		int choice;
-		cout << "1. Ì×²ÍÍÆ¼ö" << endl;
-		cout << "2. ÏÔÊ¾ËùÓÐÌ×²Í" << endl;
-		cout << "3. ²éÑ¯¸öÈËÌ×²Í" << endl;
-		cout << "4. ±ä¸üÌ×²Í" << endl;
-		cout << "0. ·µ»ØÉÏÒ»¼¶" << endl;
-		cout << "ÇëÊäÈë²Ù×÷Ç°µÄÐòºÅ£º";
-		cin >> choice;
-		switch (choice) {
-		case 1:
-			system("cls");
-			recommendPlan();
-			continueShow = true;
-			break;
-		case 2:
-			system("cls");
-			showAllPlanUser();
-			continueShow = true;
-			break;
-		case 3:
-			system("cls");
-			showMyPlan(phone);
-			continueShow = true;
-			break;
-		case 4:
-			system("cls");
-			changeMyPlan(phone);
-			continueShow = true;
-			break;
-		case 0:
-			continueShow = false;
-			break;
-		default:
-			cout << "ÄúÊäÈëµÄÐòºÅÓÐÎó£¬ÇëÖØÐÂÊäÈë¡£" << endl;
-			continueShow = true;
-		}
-	} while (continueShow);
+    bool continueShow = false;
+    do {
+        int choice;
+        cout << "1. å¥—é¤æŽ¨è" << endl;
+        cout << "2. æ˜¾ç¤ºæ‰€æœ‰å¥—é¤" << endl;
+        cout << "3. æŸ¥è¯¢ä¸ªäººå¥—é¤" << endl;
+        cout << "4. å˜æ›´å¥—é¤" << endl;
+        cout << "0. è¿”å›žä¸Šä¸€çº§" << endl;
+        cout << "è¯·è¾“å…¥æ“ä½œå‰çš„åºå·ï¼š";
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                system("cls");
+                recommendPlan();
+                continueShow = true;
+                break;
+            case 2:
+                system("cls");
+                showAllPlanUser();
+                continueShow = true;
+                break;
+            case 3:
+                system("cls");
+                showMyPlan(phone);
+                continueShow = true;
+                break;
+            case 4:
+                system("cls");
+                changeMyPlan(phone);
+                continueShow = true;
+                break;
+            case 0:
+                continueShow = false;
+                break;
+            default:
+                cout << "æ‚¨è¾“å…¥çš„åºå·æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚" << endl;
+                continueShow = true;
+        }
+    } while (continueShow);
 }
 
 void recommendPlan() {
-	int duration, traffic, broadband;
-	cout << "ÄúÊäÈëÄúÏëÒªµÄÌ×²ÍÄÚÈÝ" << endl;
-	cout << "Í¨»°Ê±³¤£¨·ÖÖÓ£©£º";
-	cin >> duration;
-	cout << "Á÷Á¿£¨MB£©£º";
-	cin >> traffic;
-	cout << "¿í´ø£¨Mb£©£º";
-	cin >> broadband;
+    int duration, traffic, broadband;
+    cout << "æ‚¨è¾“å…¥æ‚¨æƒ³è¦çš„å¥—é¤å†…å®¹" << endl;
+    cout << "é€šè¯æ—¶é•¿ï¼ˆåˆ†é’Ÿï¼‰ï¼š";
+    cin >> duration;
+    cout << "æµé‡ï¼ˆMBï¼‰ï¼š";
+    cin >> traffic;
+    cout << "å®½å¸¦ï¼ˆMbï¼‰ï¼š";
+    cin >> broadband;
 
-	list<Plan> recommend;
-	list<Plan> planList = readPlanList();
-	for (const auto& plan : planList) {
-		if (duration != 0 &&
-			(duration * 1.2 <= plan.duration || plan.duration <= duration * 0.8))
-			continue;
-		if (traffic != 0 &&
-			(traffic * 1.2 <= plan.traffic || plan.traffic <= traffic * 0.8))
-			continue;
-		if (broadband != 0 &&
-			(broadband * 1.2 <= plan.broadband || plan.broadband <= broadband * 0.8))
-			continue;
-		recommend.push_back(plan);
-	}
-	if (recommend.empty()) {
-		cout << "±§Ç¸ÕâÀïÃ»ÓÐÄãÏëÒªµÄÌ×²Í£¬ÊÔÒ»ÏÂÕâÐ©ÄØ£º" << endl;
-		// ÏòÒâÏòÌ×²ÍÖÐÌí¼ÓÊý¾Ý
-		WantedPlan plan = {0, duration, traffic, broadband, 0};
-		addWantedPlan(plan);
-		// »ñÈ¡Ëæ»úÍÆ¼ö
-		list<int> indexList = getRandIntList((int) planList.size(), 3);
-		for (int i : indexList) {
-			int index = 1;
-			for (const auto& plan : planList) {
-				if (index == i)
-					recommend.push_back(plan);
-				index++;
-			}
-		}
-	}
-	else {
-		cout << "ÎÒÃÇÕÒµ½ÁËÏÂÃæµÄÍÆ¼öÌ×²Í£º" << endl;
-	}
+    list<Plan> recommend;
+    list<Plan> planList = readPlanList();
+    for (const auto& plan : planList) {
+        if (duration != 0 && (duration * 1.2 <= plan.duration || plan.duration <= duration * 0.8))
+            continue;
+        if (traffic != 0 && (traffic * 1.2 <= plan.traffic || plan.traffic <= traffic * 0.8))
+            continue;
+        if (broadband != 0 &&
+            (broadband * 1.2 <= plan.broadband || plan.broadband <= broadband * 0.8))
+            continue;
+        recommend.push_back(plan);
+    }
+    if (recommend.empty()) {
+        cout << "æŠ±æ­‰è¿™é‡Œæ²¡æœ‰ä½ æƒ³è¦çš„å¥—é¤ï¼Œè¯•ä¸€ä¸‹è¿™äº›å‘¢ï¼š" << endl;
+        // å‘æ„å‘å¥—é¤ä¸­æ·»åŠ æ•°æ®
+        WantedPlan plan = {0, duration, traffic, broadband, 0};
+        addWantedPlan(plan);
+        // èŽ·å–éšæœºæŽ¨è
+        list<int> indexList = getRandIntList((int)planList.size(), 3);
+        for (int i : indexList) {
+            int index = 1;
+            for (const auto& plan : planList) {
+                if (index == i) recommend.push_back(plan);
+                index++;
+            }
+        }
+    } else {
+        cout << "æˆ‘ä»¬æ‰¾åˆ°äº†ä¸‹é¢çš„æŽ¨èå¥—é¤ï¼š" << endl;
+    }
 
-	showPlanList(recommend);
+    showPlanList(recommend);
 }
 
 void showAllPlanUser() {
-	list<Plan> planList = readPlanList();
-	showPlanList(planList);
+    list<Plan> planList = readPlanList();
+    showPlanList(planList);
 }
 
 void showMyPlan(string& phone) {
-	if (!isExistUserPlan(phone)) {
-		cout << "Äú»¹Ã»ÓÐÑ¡ÔñÈÎºÎÌ×²Í¡£" << endl;
-	}
-	else {
-		Plan plan = getPlanByPhone(phone);
-		list<Plan> planList = {plan};
-		showPlanList(planList);
-	}
+    if (!isExistUserPlan(phone)) {
+        cout << "æ‚¨è¿˜æ²¡æœ‰é€‰æ‹©ä»»ä½•å¥—é¤ã€‚" << endl;
+    } else {
+        Plan plan = getPlanByPhone(phone);
+        list<Plan> planList = {plan};
+        showPlanList(planList);
+    }
 }
 
 void changeMyPlan(string& phone) {
-	cout << "¿ÉÑ¡Ì×²Í£º" << endl;
-	showAllPlanUser();
-	cout << "ÇëÊäÈëÄúÒª±ä¸üµÄÌ×²ÍÇ°µÄÐòºÅ£º";
-	int id;
-	cin >> id;
-	if (!isExistPlanById(id)) {
-		cout << "ÄúÊäÈëµÄÐòºÅ²»´æÔÚ£¬ÎÞ·¨ÐÞ¸Ä" << endl;
-		return;
-	}
-	updateUserPlanByPhone(phone, id);
-	cout << "ÒÑÍê³É¡£" << endl;
+    cout << "å¯é€‰å¥—é¤ï¼š" << endl;
+    showAllPlanUser();
+    cout << "è¯·è¾“å…¥æ‚¨è¦å˜æ›´çš„å¥—é¤å‰çš„åºå·ï¼š";
+    int id;
+    cin >> id;
+    if (!isExistPlanById(id)) {
+        cout << "æ‚¨è¾“å…¥çš„åºå·ä¸å­˜åœ¨ï¼Œæ— æ³•ä¿®æ”¹" << endl;
+        return;
+    }
+    updateUserPlanByPhone(phone, id);
+    cout << "å·²å®Œæˆã€‚" << endl;
 }

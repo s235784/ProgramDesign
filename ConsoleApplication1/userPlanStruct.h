@@ -3,6 +3,6 @@
 using namespace std;
 
 struct UserPlan {
-	string phone;	  // ÊÖ»úºÅ
-	int planId;		 // Ì×²ÍID
+    string phone; // æ‰‹æœºå·
+    int planId;   // å¥—é¤ID
 };

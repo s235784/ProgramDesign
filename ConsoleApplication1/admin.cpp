@@ -1,12 +1,11 @@
-#include "file.h"
-#include "util.h"
-#include "userPlanVOStruct.h"
-#include "wantedPlanStruct.h"
-#include <iostream>
-#include <conio.h>
-#include <string>
 #include <conio.h>
 #include <windows.h>
+#include <iostream>
+#include <string>
+#include "file.h"
+#include "userPlanVOStruct.h"
+#include "util.h"
+#include "wantedPlanStruct.h"
 using namespace std;
 
 void showPlanMenu();
@@ -16,93 +15,92 @@ void showUserWantedPlan();
 string getPassword();
 
 void checkAdminPasswd() {
-	cout << "ÇëÊäÈë¹ÜÀíÔ±ÃÜÂë£º";
-	do {
-		string passwdInput = getPassword();
-		string passwd = getAdminPassword();
-		if (passwd != passwdInput) {
-			cout << "ÃÜÂë´íÎó£¬ÇëÖØÐÂÊäÈë£º";
-		}
-		else {
-			break;
-		}
-	} while (true);
+    cout << "è¯·è¾“å…¥ç®¡ç†å‘˜å¯†ç ï¼š";
+    do {
+        string passwdInput = getPassword();
+        string passwd = getAdminPassword();
+        if (passwd != passwdInput) {
+            cout << "å¯†ç é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼š";
+        } else {
+            break;
+        }
+    } while (true);
 
-	system("cls");
-	showPlanMenu();
+    system("cls");
+    showPlanMenu();
 }
 
 void showPlanMenu() {
-	bool continueShow = false;
-	do {
-		int choice;
-		cout << "1. Ì×²Í¹ÜÀí" << endl;
-		cout << "2. ËùÓÐÓÃ»§Ì×²Í" << endl;
-		cout << "3. ÓÃ»§ÒâÏòÌ×²Í" << endl;
-		cout << "0. ÍË³öµÇÂ¼" << endl;
-		cout << "ÇëÊäÈë²Ù×÷Ç°µÄÐòºÅ£º";
-		cin >> choice;
-		switch (choice) {
-		case 1:
-			system("cls");
-			showPlanManageMenu();
-			continueShow = true;
-			break;
-		case 2:
-			system("cls");
-			showAllUserPlan();
-			continueShow = true;
-			break;
-		case 3:
-			system("cls");
-			showUserWantedPlan();
-			continueShow = true;
-			break;
-		case 0:
-			continueShow = false;
-			break;
-		default:
-			cout << "ÄúÊäÈëµÄÐòºÅÓÐÎó£¬ÇëÖØÐÂÊäÈë¡£" << endl;
-			continueShow = true;
-		}
-	} while (continueShow);
+    bool continueShow = false;
+    do {
+        int choice;
+        cout << "1. å¥—é¤ç®¡ç†" << endl;
+        cout << "2. æ‰€æœ‰ç”¨æˆ·å¥—é¤" << endl;
+        cout << "3. ç”¨æˆ·æ„å‘å¥—é¤" << endl;
+        cout << "0. é€€å‡ºç™»å½•" << endl;
+        cout << "è¯·è¾“å…¥æ“ä½œå‰çš„åºå·ï¼š";
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                system("cls");
+                showPlanManageMenu();
+                continueShow = true;
+                break;
+            case 2:
+                system("cls");
+                showAllUserPlan();
+                continueShow = true;
+                break;
+            case 3:
+                system("cls");
+                showUserWantedPlan();
+                continueShow = true;
+                break;
+            case 0:
+                continueShow = false;
+                break;
+            default:
+                cout << "æ‚¨è¾“å…¥çš„åºå·æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚" << endl;
+                continueShow = true;
+        }
+    } while (continueShow);
 }
 
-// ÒÑÖªÎÊÌâ£ºÊäÈë·½Ïò¼üÊ±Ò²»á´¥·¢
+// å·²çŸ¥é—®é¢˜ï¼šè¾“å…¥æ–¹å‘é”®æ—¶ä¹Ÿä¼šè§¦å‘
 string getPassword() {
-	string str = "";
-	char init = '\0';
-	for (;;) {
-		init = _getch();
-		if (init == VK_RETURN) {
-			cout << endl;
-			break;
-		} else if (init == VK_BACK) {
-			if (str.length() != 0) {
-				cout << "\b \b" << flush;
-				str.erase(str.length() - 1);
-			}
-		} else {
-			cout << "*" << flush;
-			str += init;
-		}
-	}
-	return str;
+    string str = "";
+    char init = '\0';
+    for (;;) {
+        init = _getch();
+        if (init == VK_RETURN) {
+            cout << endl;
+            break;
+        } else if (init == VK_BACK) {
+            if (str.length() != 0) {
+                cout << "\b \b" << flush;
+                str.erase(str.length() - 1);
+            }
+        } else {
+            cout << "*" << flush;
+            str += init;
+        }
+    }
+    return str;
 }
 
 void showAllUserPlan() {
-	list<UserPlan> userPlanList = readUserPlanList();
-	list<UserPlanVO> userPlanVOList;
-	for (const auto& userPlan : userPlanList) {
-		Plan plan = getPlanById(userPlan.planId);
-		UserPlanVO userPlanVO = {userPlan.phone, plan.id, plan.fee,
-			plan.duration, plan.traffic, plan.broadband};
-		userPlanVOList.push_back(userPlanVO);
-	}
-	showUserPlanList(userPlanVOList);
+    list<UserPlan> userPlanList = readUserPlanList();
+    list<UserPlanVO> userPlanVOList;
+    for (const auto& userPlan : userPlanList) {
+        Plan plan = getPlanById(userPlan.planId);
+        UserPlanVO userPlanVO = {userPlan.phone, plan.id,      plan.fee,
+                                 plan.duration,  plan.traffic, plan.broadband};
+        userPlanVOList.push_back(userPlanVO);
+    }
+    showUserPlanList(userPlanVOList);
 }
 
 void showUserWantedPlan() {
-	list<WantedPlan> wantedPlanList = readWantedPlanList();
-	showWantedPlanList(wantedPlanList);
+    list<WantedPlan> wantedPlanList = readWantedPlanList();
+    showWantedPlanList(wantedPlanList);
 }

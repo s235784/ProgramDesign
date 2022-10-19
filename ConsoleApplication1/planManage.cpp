@@ -1,7 +1,7 @@
-#include "file.h"
-#include "util.h"
 #include <iomanip>
 #include <iostream>
+#include "file.h"
+#include "util.h"
 using namespace std;
 
 void addPlanStep();
@@ -11,151 +11,150 @@ void showAllPlan();
 void showDeletePlan();
 
 void showPlanManageMenu() {
-	bool continueShow = false;
-	do {
-		int choice;
-		cout << "1. ĞÂÔöÌ×²Í" << endl;
-		cout << "2. ĞŞ¸ÄÌ×²Í" << endl;
-		cout << "3. ²éÑ¯Ì×²Í" << endl;
-		cout << "4. É¾³ıÌ×²Í" << endl;
-		cout << "0. ·µ»ØÉÏÒ»¼¶" << endl;
-		cout << "ÇëÊäÈë²Ù×÷Ç°µÄĞòºÅ£º";
-		cin >> choice;
-		switch (choice) {
-		case 1:
-			system("cls");
-			addPlanStep();
-			continueShow = true;
-			break;
-		case 2:
-			system("cls");
-			changePlan();
-			continueShow = true;
-			break;
-		case 3:
-			system("cls");
-			showAllPlan();
-			continueShow = true;
-			break;
-		case 4:
-			system("cls");
-			showDeletePlan();
-			continueShow = true;
-			break;
-		case 0:
-			system("cls");
-			continueShow = false;
-			break;
-		default:
-			cout << "ÄúÊäÈëµÄĞòºÅÓĞÎó£¬ÇëÖØĞÂÊäÈë¡£" << endl;
-			continueShow = true;
-		}
-	} while (continueShow);
+    bool continueShow = false;
+    do {
+        int choice;
+        cout << "1. æ–°å¢å¥—é¤" << endl;
+        cout << "2. ä¿®æ”¹å¥—é¤" << endl;
+        cout << "3. æŸ¥è¯¢å¥—é¤" << endl;
+        cout << "4. åˆ é™¤å¥—é¤" << endl;
+        cout << "0. è¿”å›ä¸Šä¸€çº§" << endl;
+        cout << "è¯·è¾“å…¥æ“ä½œå‰çš„åºå·ï¼š";
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                system("cls");
+                addPlanStep();
+                continueShow = true;
+                break;
+            case 2:
+                system("cls");
+                changePlan();
+                continueShow = true;
+                break;
+            case 3:
+                system("cls");
+                showAllPlan();
+                continueShow = true;
+                break;
+            case 4:
+                system("cls");
+                showDeletePlan();
+                continueShow = true;
+                break;
+            case 0:
+                system("cls");
+                continueShow = false;
+                break;
+            default:
+                cout << "æ‚¨è¾“å…¥çš„åºå·æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚" << endl;
+                continueShow = true;
+        }
+    } while (continueShow);
 }
 
 void addPlanStep() {
-	Plan plan = {};
-	cout << "ÇëÊäÈëÏà¹ØĞÅÏ¢" << endl;
-	plan.fee = showPlanItemInput("×Ê·Ñ£¨Ôª£©£º", "Ö»ÄÜÓĞÁ½Î»Ğ¡Êı£¬Çë¼ì²éÊı¾İ¸ñÊ½", 2);
-	plan.duration = (int) showPlanItemInput("Í¨»°Ê±³¤£¨·ÖÖÓ£©£º", "Ö»ÄÜÊÇÕûÊı£¬Çë¼ì²éÊı¾İ¸ñÊ½", 0);
-	plan.traffic = (int) showPlanItemInput("Á÷Á¿£¨MB£©£º", "Ö»ÄÜÊÇÕûÊı£¬Çë¼ì²éÊı¾İ¸ñÊ½", 0);
-	plan.broadband = (int) showPlanItemInput("´ø¿í£¨Mb£©£º", "Ö»ÄÜÊÇÕûÊı£¬Çë¼ì²éÊı¾İ¸ñÊ½", 0);
+    Plan plan = {};
+    cout << "è¯·è¾“å…¥ç›¸å…³ä¿¡æ¯" << endl;
+    plan.fee = showPlanItemInput("èµ„è´¹ï¼ˆå…ƒï¼‰ï¼š", "åªèƒ½æœ‰ä¸¤ä½å°æ•°ï¼Œè¯·æ£€æŸ¥æ•°æ®æ ¼å¼", 2);
+    plan.duration = (int)showPlanItemInput("é€šè¯æ—¶é•¿ï¼ˆåˆ†é’Ÿï¼‰ï¼š", "åªèƒ½æ˜¯æ•´æ•°ï¼Œè¯·æ£€æŸ¥æ•°æ®æ ¼å¼", 0);
+    plan.traffic = (int)showPlanItemInput("æµé‡ï¼ˆMBï¼‰ï¼š", "åªèƒ½æ˜¯æ•´æ•°ï¼Œè¯·æ£€æŸ¥æ•°æ®æ ¼å¼", 0);
+    plan.broadband = (int)showPlanItemInput("å¸¦å®½ï¼ˆMbï¼‰ï¼š", "åªèƒ½æ˜¯æ•´æ•°ï¼Œè¯·æ£€æŸ¥æ•°æ®æ ¼å¼", 0);
 
-	system("cls");
-	if (isExistPlan(plan)) {
-		cout << "ÒÑÓĞÏàÍ¬µÄÌ×²Í£¬¸ÃÌ×²Í½«²»»á±»´´½¨" << endl;
-	}
-	else {
-		addPlan(plan);
-		cout << "ÒÑ´´½¨¸ÃÌ×²Í" << endl;
-	}
+    system("cls");
+    if (isExistPlan(plan)) {
+        cout << "å·²æœ‰ç›¸åŒçš„å¥—é¤ï¼Œè¯¥å¥—é¤å°†ä¸ä¼šè¢«åˆ›å»º" << endl;
+    } else {
+        addPlan(plan);
+        cout << "å·²åˆ›å»ºè¯¥å¥—é¤" << endl;
+    }
 }
 
 /*
-* place: ÔÊĞíµÄĞ¡ÊıÎ»Êı
-*/
+ * place: å…è®¸çš„å°æ•°ä½æ•°
+ */
 float showPlanItemInput(string name, string msg, int places) {
-	do {
-		float value;
-		cout << name;
-		cin >> value;
-		if (getDecimalPlaces(value) > places) {
-			cout << "Ö»ÄÜÊÇÕûÊı£¬Çë¼ì²éÊı¾İ¸ñÊ½" << endl;
-		}
-		else
-		{
-			return value;
-		}
-	} while (true);
+    do {
+        float value;
+        cout << name;
+        cin >> value;
+        if (getDecimalPlaces(value) > places) {
+            cout << "åªèƒ½æ˜¯æ•´æ•°ï¼Œè¯·æ£€æŸ¥æ•°æ®æ ¼å¼" << endl;
+        } else {
+            return value;
+        }
+    } while (true);
 }
 
 void changePlan() {
-	showAllPlan();
-	cout << "ÇëÊäÈëÄúÒªĞŞ¸ÄµÄÌ×²ÍÇ°µÄĞòºÅ£º";
-	int id;
-	cin >> id;
-	if (!isExistPlanById(id)) {
-		cout << "ÄúÊäÈëµÄĞòºÅ²»´æÔÚ£¬ÎŞ·¨ĞŞ¸Ä" << endl;
-		return;
-	}
+    showAllPlan();
+    cout << "è¯·è¾“å…¥æ‚¨è¦ä¿®æ”¹çš„å¥—é¤å‰çš„åºå·ï¼š";
+    int id;
+    cin >> id;
+    if (!isExistPlanById(id)) {
+        cout << "æ‚¨è¾“å…¥çš„åºå·ä¸å­˜åœ¨ï¼Œæ— æ³•ä¿®æ”¹" << endl;
+        return;
+    }
 
-	cout << "1. ×Ê·Ñ" << endl;
-	cout << "2. Í¨»°Ê±³¤" << endl;
-	cout << "3. Á÷Á¿" << endl;
-	cout << "4. ´ø¿í" << endl;
+    cout << "1. èµ„è´¹" << endl;
+    cout << "2. é€šè¯æ—¶é•¿" << endl;
+    cout << "3. æµé‡" << endl;
+    cout << "4. å¸¦å®½" << endl;
 
-	Plan plan = getPlanById(id);
-	bool continueShow = false;
-	do {
-		int choice;
-		cout << "ÇëÊäÈëÄúÒªĞŞ¸ÄÄÚÈİÇ°µÄĞòºÅ£º";
-		cin >> choice;
-		switch (choice) {
-		case 1:
-			plan.fee = showPlanItemInput("×Ê·Ñ£¨Ôª£©£º", "Ö»ÄÜÓĞÁ½Î»Ğ¡Êı£¬Çë¼ì²éÊı¾İ¸ñÊ½", 2);
-			continueShow = false;
-			break;
-		case 2:
-			plan.duration = (int) showPlanItemInput("Í¨»°Ê±³¤£¨·ÖÖÓ£©£º", "Ö»ÄÜÊÇÕûÊı£¬Çë¼ì²éÊı¾İ¸ñÊ½", 0);
-			continueShow = false;
-			break;
-		case 3:
-			plan.traffic = (int) showPlanItemInput("Á÷Á¿£¨MB£©£º", "Ö»ÄÜÊÇÕûÊı£¬Çë¼ì²éÊı¾İ¸ñÊ½", 0);
-			continueShow = false;
-			break;
-		case 4:
-			plan.broadband = (int) showPlanItemInput("´ø¿í£¨Mb£©£º", "Ö»ÄÜÊÇÕûÊı£¬Çë¼ì²éÊı¾İ¸ñÊ½", 0);
-			continueShow = false;
-			break;
-		default:
-			cout << "ÄúÊäÈëµÄĞòºÅÓĞÎó£¬ÇëÖØĞÂÊäÈë¡£" << endl;
-			continueShow = true;
-		}
-	} while (continueShow);
+    Plan plan = getPlanById(id);
+    bool continueShow = false;
+    do {
+        int choice;
+        cout << "è¯·è¾“å…¥æ‚¨è¦ä¿®æ”¹å†…å®¹å‰çš„åºå·ï¼š";
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                plan.fee = showPlanItemInput("èµ„è´¹ï¼ˆå…ƒï¼‰ï¼š", "åªèƒ½æœ‰ä¸¤ä½å°æ•°ï¼Œè¯·æ£€æŸ¥æ•°æ®æ ¼å¼", 2);
+                continueShow = false;
+                break;
+            case 2:
+                plan.duration = (int)showPlanItemInput("é€šè¯æ—¶é•¿ï¼ˆåˆ†é’Ÿï¼‰ï¼š",
+                                                       "åªèƒ½æ˜¯æ•´æ•°ï¼Œè¯·æ£€æŸ¥æ•°æ®æ ¼å¼", 0);
+                continueShow = false;
+                break;
+            case 3:
+                plan.traffic =
+                        (int)showPlanItemInput("æµé‡ï¼ˆMBï¼‰ï¼š", "åªèƒ½æ˜¯æ•´æ•°ï¼Œè¯·æ£€æŸ¥æ•°æ®æ ¼å¼", 0);
+                continueShow = false;
+                break;
+            case 4:
+                plan.broadband =
+                        (int)showPlanItemInput("å¸¦å®½ï¼ˆMbï¼‰ï¼š", "åªèƒ½æ˜¯æ•´æ•°ï¼Œè¯·æ£€æŸ¥æ•°æ®æ ¼å¼", 0);
+                continueShow = false;
+                break;
+            default:
+                cout << "æ‚¨è¾“å…¥çš„åºå·æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚" << endl;
+                continueShow = true;
+        }
+    } while (continueShow);
 
-	updatePlan(plan);
+    updatePlan(plan);
 
-	system("cls");
-	cout << "ÒÑĞŞ¸Ä" << endl;
+    system("cls");
+    cout << "å·²ä¿®æ”¹" << endl;
 }
 
 void showAllPlan() {
-	list<Plan> planList = readPlanList();
-	showPlanList(planList);
+    list<Plan> planList = readPlanList();
+    showPlanList(planList);
 }
 
 void showDeletePlan() {
-	showAllPlan();
-	cout << "ÇëÊäÈëÄúÒªÉ¾³ıµÄÌ×²ÍÇ°µÄĞòºÅ£º";
-	int id;
-	cin >> id;
-	if (!isExistPlanById(id)) {
-		system("cls");
-		cout << "ÄúÊäÈëµÄĞòºÅ²»´æÔÚ£¬ÎŞ·¨É¾³ı" << endl;
-	}
-	else {
-		deletePlan(id);
-		system("cls");
-		cout << "ÒÑÉ¾³ı" << endl;
-	}
+    showAllPlan();
+    cout << "è¯·è¾“å…¥æ‚¨è¦åˆ é™¤çš„å¥—é¤å‰çš„åºå·ï¼š";
+    int id;
+    cin >> id;
+    if (!isExistPlanById(id)) {
+        system("cls");
+        cout << "æ‚¨è¾“å…¥çš„åºå·ä¸å­˜åœ¨ï¼Œæ— æ³•åˆ é™¤" << endl;
+    } else {
+        deletePlan(id);
+        system("cls");
+        cout << "å·²åˆ é™¤" << endl;
+    }
 }

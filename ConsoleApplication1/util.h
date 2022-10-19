@@ -1,10 +1,10 @@
 #pragma once
+#include <list>
+#include <string>
 #include "planStruct.h"
 #include "userPlanStruct.h"
 #include "userPlanVOStruct.h"
 #include "wantedPlanStruct.h"
-#include <list>
-#include <string>
 using namespace std;
 
 string getPlanString(Plan plan);

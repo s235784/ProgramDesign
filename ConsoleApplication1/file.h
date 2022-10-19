@@ -1,9 +1,9 @@
 #pragma once
+#include <list>
+#include <string>
 #include "planStruct.h"
 #include "userPlanStruct.h"
 #include "wantedPlanStruct.h"
-#include <string>
-#include <list>
 using namespace std;
 
 void initProperties();

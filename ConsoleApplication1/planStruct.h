@@ -1,9 +1,9 @@
 #pragma once
 
 struct Plan {
-	int id;				// 编号
-	float fee;			// 费用
-	int duration;		// 通话时长 单位分钟
-	int traffic;			// 流量 单位MByte
-	int broadband; // 宽带 单位Mbits
+    int id;        // 缂栧彿
+    float fee;     // 璐圭敤
+    int duration;  // 閫氳瘽鏃堕暱 鍗曚綅鍒嗛挓
+    int traffic;   // 娴侀噺 鍗曚綅MByte
+    int broadband; // 瀹藉甫 鍗曚綅Mbits
 };
